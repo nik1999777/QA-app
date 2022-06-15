@@ -77,13 +77,13 @@ const AutoTestsFormViews: React.FC<IFormViewsProps> = ({
 				<Text className={styles.form__wrapper_text}>VISUALIZATION</Text>
 				<div className={styles.form__wrapp}>
 					<Ui.InputCheckbox
-						name='notification'
+						name='testsResults'
 						control={control}
 						label='Tests results report'
 						content={ResultsReportContent.options}
 					/>
 					<Ui.InputCheckbox
-						name='notification'
+						name='attachments'
 						control={control}
 						label='Add attachments'
 						content={AttachmentsContent.options}
@@ -146,6 +146,7 @@ const AutoTestsFormViews: React.FC<IFormViewsProps> = ({
 						name='testManagement'
 						control={control}
 						content={TestManagementContent.options}
+						label='Connect with'
 					/>
 				</div>
 			</div>
