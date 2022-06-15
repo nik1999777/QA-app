@@ -1,0 +1,9 @@
+.radio {
+	display: grid;
+	grid-gap: 15px;
+	margin-top: 20px;
+	&__item {
+		display: flex;
+		grid-gap: 7px;
+	}
+}

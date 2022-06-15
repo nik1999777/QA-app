@@ -1,0 +1,16 @@
+export const defaultValues = {
+	firstName: '',
+	lastName: '',
+	email: '',
+	gender: '',
+	phone: '',
+	birthDate: new Date(),
+	subjects: [],
+	hobbies: [],
+	state: '',
+	city: '',
+	slider: 0,
+	language: '',
+	address: '',
+	file: '',
+}

@@ -1,0 +1,14 @@
+{
+	"options": [
+		{
+			"label": "Connect with Allure TestOps",
+			"value": "Connect with Allure TestOps",
+			"id": "1"
+		},
+		{
+			"label": "Connect with Jira",
+			"value": "Connect with Jira",
+			"id": "2"
+		}
+	]
+}

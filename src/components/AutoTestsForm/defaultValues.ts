@@ -1,0 +1,15 @@
+export const defaultValues = {
+	URL: '',
+	code: '',
+	titleTest: '',
+	consoleErrorsTest: '',
+	manualTests: '',
+	sourceCode: '',
+	toolCICD: '',
+	browserType: '',
+	browsersHub: '',
+	notification: '',
+	testManagement: '',
+	testsResults: '',
+	attachments: '',
+}
