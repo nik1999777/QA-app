@@ -16,17 +16,17 @@ export interface IFormInput {
 }
 
 export interface IFormAutoTestsInput {
-	URL: string
+	url: string
 	code: string
-	titleTest: string
-	consoleErrorsTest: string
-	manualTests: string
-	sourceCode: string
-	toolCICD: string
-	browserType: string
-	browsersHub: string
-	notification: string
-	testManagement: string
-	testsResults: string
-	attachments: string
+	title_check: boolean
+	console_check: boolean
+	manual: string
+	allure_reports: boolean
+	attachments: string[]
+	source_code: string
+	CI_CD_tool: string
+	browser_type: string
+	browsers_hub: string
+	notification: string[]
+	test_management: string[]
 }

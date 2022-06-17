@@ -1,39 +1,37 @@
-import { Checkbox, Typography } from 'antd'
+import { Checkbox, Space } from 'antd'
 import FormItem from 'antd/lib/form/FormItem'
 import React from 'react'
 import { Controller } from 'react-hook-form'
 import { IFormInputProps } from '../../../types/InputProps'
-
-const { Text } = Typography
-
-import styles from './InputCheckbox.module.scss'
 
 const InputCheckbox: React.FC<IFormInputProps> = ({
 	name,
 	control,
 	label,
 	content,
-	display,
+	direction,
 }) => {
+	const generateCheckboxOptions = (content: any) => {
+		return content.map((singleOptionValue: any) => (
+			<Checkbox key={singleOptionValue.id} value={singleOptionValue.value}>
+				{singleOptionValue.label}
+			</Checkbox>
+		))
+	}
+
 	return (
-		<FormItem label={label}>
+		<FormItem>
+			<p>{label}</p>
 			<Controller
 				name={name}
 				control={control}
-				render={({ field: { onChange, value } }) => {
-					return (
-						<>
-							<Checkbox.Group
-								className={styles.checkbox}
-								style={{ display: display }}
-								options={content}
-								value={value}
-								onChange={onChange}
-								name={name}
-							/>
-						</>
-					)
-				}}
+				render={({ field: { onChange, value } }) => (
+					<Checkbox.Group value={value} onChange={onChange}>
+						<Space direction={direction}>
+							{generateCheckboxOptions(content)}
+						</Space>
+					</Checkbox.Group>
+				)}
 			/>
 		</FormItem>
 	)

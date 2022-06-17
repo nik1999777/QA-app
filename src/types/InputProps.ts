@@ -10,5 +10,5 @@ export interface IFormInputProps {
 	setCityState?: any
 	errors?: any
 	content?: any
-	display?: any
+	direction?: any
 }

@@ -1,13 +1,14 @@
+import { Divider } from 'antd'
 import { useState } from 'react'
-import AutoTestsForm from '../components/AutoTestsForm/AutoTestsForm'
+import AutoTestsForm from '../components/AutoTestsForm/AutoTestsForm/AutoTestsForm'
 import ContainerLeft from '../components/Containers/ContainerLeft/ContainerLeft'
 import ContainerRight from '../components/Containers/ContainerRight/ConteinerRight'
-import FormResult from '../components/FormResult/FormResultMui/FormResult'
+import FormResultAnt from '../components/FormResult/FormResultAnt/FormResultAnt'
 
 const AutoTestsPage = () => {
-	const [data, setData] = useState()
+	const [data, setData] = useState(undefined)
 
-	console.log(data ? JSON.stringify(data) : null)
+	console.log(data)
 
 	return (
 		<>
@@ -15,10 +16,20 @@ const AutoTestsPage = () => {
 				<AutoTestsForm setData={setData} />
 			</ContainerLeft>
 			<ContainerRight>
+				<p style={{ color: 'white' }}>Result</p>
+				<p style={{ color: 'white' }}>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+					eligendi suscipit esse, quibusdam labore autem aspernatur? Soluta qui
+					fugiat officia accusantium autem, odit explicabo itaque. Deleniti
+					repellendus obcaecati alias eaque?
+				</p>
+				<Divider />
 				{data ? (
-					<FormResult data={data} />
+					<FormResultAnt data={data} />
 				) : (
-					<div>Please enter your data and submit</div>
+					<div style={{ color: 'white' }}>
+						Please enter your data and submit
+					</div>
 				)}
 			</ContainerRight>
 		</>

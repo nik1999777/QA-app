@@ -2,7 +2,7 @@
 	"options": [
 		{
 			"label": "Check page title",
-			"value": "Check page title",
+			"value": true,
 			"id": "1"
 		}
 	]

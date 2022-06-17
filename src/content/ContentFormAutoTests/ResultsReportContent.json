@@ -2,7 +2,7 @@
 	"options": [
 		{
 			"label": "Allure Reports",
-			"value": "Allure Reports",
+			"value": true,
 			"id": "1"
 		}
 	]

@@ -2,7 +2,7 @@
 	"options": [
 		{
 			"label": "Check page console has no errors",
-			"value": "Check page console has no errors",
+			"value": true,
 			"id": "1"
 		}
 	]

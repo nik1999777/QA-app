@@ -1,0 +1,17 @@
+.result {
+	display: grid;
+	grid-template-columns: 140px 1fr;
+	grid-gap: 25px;
+}
+
+.keys {
+	border: 1px solid black;
+	padding: 5px;
+	min-height: 5vh;
+}
+
+.values {
+	border: 1px solid black;
+	padding: 5px;
+	min-height: 5vh;
+}

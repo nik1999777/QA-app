@@ -3,17 +3,17 @@
 		{
 			"label": "Screenshots",
 			"value": "Screenshots",
-			"id": "2"
+			"id": "1"
 		},
 		{
 			"label": "Video",
 			"value": "Video",
-			"id": "3"
+			"id": "2"
 		},
 		{
 			"label": "Console logs",
 			"value": "Console logs",
-			"id": "4"
+			"id": "3"
 		},
 		{
 			"label": "Network logs",
@@ -23,7 +23,7 @@
 		{
 			"label": "Page source",
 			"value": "Page source",
-			"id": "4"
+			"id": "5"
 		}
 	]
 }
