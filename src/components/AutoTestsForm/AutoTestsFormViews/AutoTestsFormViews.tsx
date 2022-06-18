@@ -2,6 +2,7 @@ import React from 'react'
 import Ui from '../../../views/UiFormAnt'
 import { IFormViewsProps } from '../../../types/FormViewsProps'
 import styles from './AutoTestsFormViews.module.scss'
+import { PlusCircleOutlined } from '@ant-design/icons'
 
 import Content from '../../../content'
 
@@ -11,7 +12,7 @@ const renderIcons = (icons: string[]) => {
 	return icons.map(icon => <img width={25} key={icon} src={icon} />)
 }
 
-const AutoTestsFormViews: React.FC<IFormViewsProps> = ({ control, watch }) => {
+const AutoTestsFormViews: React.FC<IFormViewsProps> = ({ control }) => {
 	return (
 		<div className={styles.form}>
 			<div>{renderIcons(Object.values(icons))}</div>
@@ -35,26 +36,68 @@ const AutoTestsFormViews: React.FC<IFormViewsProps> = ({ control, watch }) => {
 			</div>
 			<div className={styles.form__wrapper}>
 				<p className={styles.form__wrapper_text}>TESTS</p>
-				<Ui.InputCheckbox
-					control={control}
-					name='title_check'
-					label='Generate some autotests with AI:'
-					content={Content.TestsTitleContent.options}
-				/>
-				<p className={styles.form__wrapper_subtitle}>
-					- Open url '' <br /> - Title should be 'All posts in a row / Habr'
-				</p>
-				<Ui.InputCheckbox
-					control={control}
-					name='console_check'
-					content={Content.TestsErrorsContent.options}
-				/>
-				<p className={styles.form__wrapper_subtitle}>
-					- Open url '' <br /> - Console logs should not contain text 'SEVERE'
-				</p>
+				<div className={styles.border}>
+					<Ui.InputCheckbox
+						control={control}
+						name='title_check'
+						content={Content.TestsTitleContent.options}
+						label='Generate tests with AI'
+					/>
+					<p className={styles.form__wrapper_subtitle}>
+						- Open url '' <br /> - Title should be 'All posts in a row / Habr'
+					</p>
+				</div>
+				<br />
+				<div className={styles.border}>
+					<Ui.InputCheckbox
+						control={control}
+						name='console_check'
+						content={Content.TestsErrorsContent.options}
+					/>
+					<p className={styles.form__wrapper_subtitle}>
+						- Open url '' <br /> - Console logs should not contain text 'SEVERE'
+					</p>
+				</div>
 				<p>Add manual tests to automate:</p>
-				{watch('manual') ? <>{watch('manual')}</> : ''}
-				<Ui.InputTextArea control={control} name='manual' />
+				<div className={styles.form__wrapper_wrapp}>
+					<div className={styles.border}>
+						<Ui.InputText
+							control={control}
+							name='title_1'
+							placeholder='title'
+						/>
+						<Ui.InputTextArea
+							control={control}
+							name='steps_1'
+							placeholder='steps'
+						/>
+					</div>
+					<div className={styles.border}>
+						<Ui.InputText
+							control={control}
+							name='title_2'
+							placeholder='title'
+						/>
+						<Ui.InputTextArea
+							control={control}
+							name='steps_2'
+							placeholder='steps'
+						/>
+					</div>
+					<div className={styles.border}>
+						<Ui.InputText
+							control={control}
+							name='title_3'
+							placeholder='title'
+						/>
+						<Ui.InputTextArea
+							control={control}
+							name='steps_3'
+							placeholder='steps'
+						/>
+					</div>
+					<PlusCircleOutlined className={styles.icon} />
+				</div>
 			</div>
 			<div className={styles.form__wrapper}>
 				<p className={styles.form__wrapper_text}>VISUALIZATION</p>

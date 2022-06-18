@@ -15,8 +15,6 @@ const AutoTestsForm: React.FC<any> = ({ setData }) => {
 		control,
 		setValue,
 		reset,
-		getValues,
-		watch,
 		formState: { errors },
 	} = useForm<IFormAutoTestsInput>({
 		defaultValues,
@@ -26,14 +24,12 @@ const AutoTestsForm: React.FC<any> = ({ setData }) => {
 
 	return (
 		<>
-			<Title>Test automation as a Service</Title>
+			<Title style={{ width: '508px' }}>Test automation as a Service</Title>
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<AutoTestsFormViews
 					control={control}
 					setValue={setValue}
 					errors={errors}
-					getValues={getValues}
-					watch={watch}
 				/>
 				<div className={styles.wrapper}>
 					<Button className={styles.wrapper__button} htmlType='submit'>

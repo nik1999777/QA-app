@@ -1,0 +1,58 @@
+.title {
+	color: #e6daca;
+	background: linear-gradient(0deg, #141414, #141414),
+		linear-gradient(0deg, #141414, #141414), #141414;
+	padding: 10px;
+	padding-left: 66px;
+	font-size: 15px;
+	margin-bottom: 0;
+}
+
+.subtitle {
+	color: #e6daca;
+	font-size: 13px;
+	background: linear-gradient(0deg, #2b2b2b, #2b2b2b),
+		linear-gradient(0deg, #141414, #141414), #141414;
+	padding: 10px;
+	padding-left: 66px;
+	margin-bottom: 0;
+}
+
+.wrapper {
+	:nth-child(1) {
+		margin-top: 188px;
+	}
+	:nth-child(2) {
+		margin-top: 78px;
+	}
+	:nth-child(4) {
+		margin-top: 92px;
+	}
+	:nth-child(6) {
+		margin-top: 230px;
+	}
+	:nth-child(7) {
+		margin-top: 168px;
+	}
+	:nth-child(9) {
+		margin-top: 38px;
+	}
+	:nth-child(10) {
+		margin-top: 70px;
+	}
+	:nth-child(12) {
+		margin-top: 32px;
+	}
+	:nth-child(13) {
+		margin-top: 32px;
+	}
+	:nth-child(14) {
+		margin-top: 32px;
+	}
+	:nth-child(15) {
+		margin-top: 88px;
+	}
+	:nth-child(17) {
+		margin-top: 60px;
+	}
+}

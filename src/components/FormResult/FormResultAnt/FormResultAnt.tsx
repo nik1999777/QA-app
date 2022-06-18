@@ -15,7 +15,7 @@ const FormResultAnt: React.FC<IFormResult> = ({ data }) => {
 
 	useEffect(() => {
 		if (linesShown < arrayData.length) {
-			setTimeout(() => setLinesShown(linesShown + 1), 1500)
+			setTimeout(() => setLinesShown(linesShown + 1), 1000)
 		}
 	}, [linesShown])
 

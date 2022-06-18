@@ -1,6 +1,6 @@
-import { Divider } from 'antd'
 import { useState } from 'react'
 import AutoTestsForm from '../components/AutoTestsForm/AutoTestsForm/AutoTestsForm'
+import AutoTestsRight from '../components/AutoTestsRight/AutoTestsRight'
 import ContainerLeft from '../components/Containers/ContainerLeft/ContainerLeft'
 import ContainerRight from '../components/Containers/ContainerRight/ConteinerRight'
 import FormResultAnt from '../components/FormResult/FormResultAnt/FormResultAnt'
@@ -16,21 +16,27 @@ const AutoTestsPage = () => {
 				<AutoTestsForm setData={setData} />
 			</ContainerLeft>
 			<ContainerRight>
-				<p style={{ color: 'white' }}>Result</p>
-				<p style={{ color: 'white' }}>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-					eligendi suscipit esse, quibusdam labore autem aspernatur? Soluta qui
-					fugiat officia accusantium autem, odit explicabo itaque. Deleniti
-					repellendus obcaecati alias eaque?
-				</p>
-				<Divider />
-				{data ? (
-					<FormResultAnt data={data} />
-				) : (
-					<div style={{ color: 'white' }}>
-						Please enter your data and submit
-					</div>
-				)}
+				<AutoTestsRight />
+				<div
+					style={{
+						padding: '20px',
+					}}
+				>
+					{data ? (
+						<FormResultAnt data={data} />
+					) : (
+						<div
+							style={{
+								color: 'white',
+								marginTop: '70px',
+								fontSize: '25px',
+								textAlign: 'center',
+							}}
+						>
+							Please enter your data and submit
+						</div>
+					)}
+				</div>
 			</ContainerRight>
 		</>
 	)
