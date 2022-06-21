@@ -1,4 +1,4 @@
-import { InputLabel } from '@mui/material'
+import FormItem from 'antd/lib/form/FormItem'
 import React from 'react'
 import { Controller } from 'react-hook-form'
 import { IFormInputProps } from '../../../types/InputProps'
@@ -21,8 +21,7 @@ const InputSelectOption: React.FC<IFormInputProps> = ({
 		})
 	}
 	return (
-		<>
-			<InputLabel htmlFor='pet-select'>{label}</InputLabel>
+		<FormItem label={label}>
 			<Controller
 				control={control}
 				name={name}
@@ -33,7 +32,7 @@ const InputSelectOption: React.FC<IFormInputProps> = ({
 					</select>
 				)}
 			/>
-		</>
+		</FormItem>
 	)
 }
 

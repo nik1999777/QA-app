@@ -1,0 +1,13 @@
+{
+	"options": [
+		{
+			"State1": ["City1", "City2", "City3"]
+		},
+		{
+			"State2": ["City4", "City5", "City6"]
+		},
+		{
+			"State3": ["City7", "City7", "City8"]
+		}
+	]
+}

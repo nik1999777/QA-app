@@ -2,11 +2,14 @@ import React from 'react'
 import Ui from '../../../views/UiFormAnt'
 import { IFormViewsProps } from '../../../types/FormViewsProps'
 import styles from './AutoTestsFormViews.module.scss'
-import { PlusCircleOutlined } from '@ant-design/icons'
+import Box from '../../../views/Common/Box/Box'
+import { Typography } from 'antd'
+const { Text } = Typography
 
 import Content from '../../../content'
 
 import { icons } from '../../../assets'
+import InputManualTests from '../../../views/UiFormAnt/InputManualTests/InputManualTests'
 
 const renderIcons = (icons: string[]) => {
 	return icons.map(icon => <img width={25} key={icon} src={icon} />)
@@ -14,18 +17,18 @@ const renderIcons = (icons: string[]) => {
 
 const AutoTestsFormViews: React.FC<IFormViewsProps> = ({ control }) => {
 	return (
-		<div className={styles.form}>
-			<div>{renderIcons(Object.values(icons))}</div>
-			<div className={styles.form__wrapper}>
-				<p className={styles.form__wrapper_text}>URL</p>
+		<Box className={styles.form}>
+			<Box>{renderIcons(Object.values(icons))}</Box>
+			<Box className={styles.form__wrapper}>
+				<Text className={styles.form__wrapper_text}>URL</Text>
 				<Ui.InputText
 					name='url'
 					control={control}
 					placeholder='https://your.site'
 				/>
-			</div>
-			<div className={styles.form__wrapper}>
-				<p className={styles.form__wrapper_text}>CODE</p>
+			</Box>
+			<Box className={styles.form__wrapper}>
+				<Text className={styles.form__wrapper_text}>CODE</Text>
 				<Ui.InputRadio
 					name='code'
 					control={control}
@@ -33,74 +36,39 @@ const AutoTestsFormViews: React.FC<IFormViewsProps> = ({ control }) => {
 					content={Content.CodeContent.options}
 					direction='vertical'
 				/>
-			</div>
-			<div className={styles.form__wrapper}>
-				<p className={styles.form__wrapper_text}>TESTS</p>
-				<div className={styles.border}>
+			</Box>
+			<Box className={styles.form__wrapper}>
+				<Text className={styles.form__wrapper_text}>TESTS</Text>
+				<Box className={styles.border}>
 					<Ui.InputCheckbox
 						control={control}
 						name='title_check'
 						content={Content.TestsTitleContent.options}
 						label='Generate tests with AI'
 					/>
-					<p className={styles.form__wrapper_subtitle}>
+					<Text className={styles.form__wrapper_subtitle}>
 						- Open url '' <br /> - Title should be 'All posts in a row / Habr'
-					</p>
-				</div>
+					</Text>
+				</Box>
 				<br />
-				<div className={styles.border}>
+				<Box className={styles.border}>
 					<Ui.InputCheckbox
 						control={control}
 						name='console_check'
 						content={Content.TestsErrorsContent.options}
 					/>
-					<p className={styles.form__wrapper_subtitle}>
+					<Text className={styles.form__wrapper_subtitle}>
 						- Open url '' <br /> - Console logs should not contain text 'SEVERE'
-					</p>
-				</div>
-				<p>Add manual tests to automate:</p>
-				<div className={styles.form__wrapper_wrapp}>
-					<div className={styles.border}>
-						<Ui.InputText
-							control={control}
-							name='title_1'
-							placeholder='title'
-						/>
-						<Ui.InputTextArea
-							control={control}
-							name='steps_1'
-							placeholder='steps'
-						/>
-					</div>
-					<div className={styles.border}>
-						<Ui.InputText
-							control={control}
-							name='title_2'
-							placeholder='title'
-						/>
-						<Ui.InputTextArea
-							control={control}
-							name='steps_2'
-							placeholder='steps'
-						/>
-					</div>
-					<div className={styles.border}>
-						<Ui.InputText
-							control={control}
-							name='title_3'
-							placeholder='title'
-						/>
-						<Ui.InputTextArea
-							control={control}
-							name='steps_3'
-							placeholder='steps'
-						/>
-					</div>
-					<PlusCircleOutlined className={styles.icon} />
-				</div>
-			</div>
-			<div className={styles.form__wrapper}>
-				<p className={styles.form__wrapper_text}>VISUALIZATION</p>
+					</Text>
+				</Box>
+				<InputManualTests
+					control={control}
+					label='Add manual tests to automate:'
+					name={''}
+				/>
+			</Box>
+			<Box className={styles.form__wrapper}>
+				<Text className={styles.form__wrapper_text}>VISUALIZATION</Text>
 				<Ui.InputCheckbox
 					name='allure_reports'
 					control={control}
@@ -113,9 +81,9 @@ const AutoTestsFormViews: React.FC<IFormViewsProps> = ({ control }) => {
 					label='Add attachments'
 					content={Content.AttachmentsContent.options}
 				/>
-			</div>
-			<div className={styles.form__wrapper}>
-				<p className={styles.form__wrapper_text}>INFRASTRUCTURE</p>
+			</Box>
+			<Box className={styles.form__wrapper}>
+				<Text className={styles.form__wrapper_text}>INFRASTRUCTURE</Text>
 				<Ui.InputRadio
 					name='source_code'
 					control={control}
@@ -140,18 +108,18 @@ const AutoTestsFormViews: React.FC<IFormViewsProps> = ({ control }) => {
 					label='Browsers hub'
 					content={Content.BrowsersHubContent.options}
 				/>
-			</div>
-			<div className={styles.form__wrapper}>
-				<p className={styles.form__wrapper_text}>NOTIFICATIONS</p>
+			</Box>
+			<Box className={styles.form__wrapper}>
+				<Text className={styles.form__wrapper_text}>NOTIFICATIONS</Text>
 				<Ui.InputCheckbox
 					name='notification'
 					control={control}
 					label='Add test results notifications'
 					content={Content.NotificationsContent.options}
 				/>
-			</div>
-			<div className={styles.form__wrapper}>
-				<p className={styles.form__wrapper_text}>TEST MANAGEMENT</p>
+			</Box>
+			<Box className={styles.form__wrapper}>
+				<Text className={styles.form__wrapper_text}>TEST MANAGEMENT</Text>
 				<Ui.InputCheckbox
 					name='test_management'
 					control={control}
@@ -159,8 +127,8 @@ const AutoTestsFormViews: React.FC<IFormViewsProps> = ({ control }) => {
 					label='Connect with'
 					direction='vertical'
 				/>
-			</div>
-		</div>
+			</Box>
+		</Box>
 	)
 }
 

@@ -1,13 +1,15 @@
-import { Container } from '@mui/system'
-import { LayoutProps } from '../../Layout/types'
+import { FC } from 'react'
 
 import styles from './ContentRightLayout.module.scss'
 
-const ContainerRight = ({ children }: LayoutProps) => {
+interface ContainerProps {
+	children: JSX.Element | JSX.Element[] | undefined
+}
+
+const ContainerRight: FC<ContainerProps> = ({ children }) => {
 	return (
 		<div className={styles.content__right}>
 			<div className={styles.content__right_wrapper}>{children}</div>
-			{/* <Container sx={{ mt: '90px' }}>{children}</Container> */}
 		</div>
 	)
 }

@@ -1,25 +1,21 @@
+import React from 'react'
 import { Controller } from 'react-hook-form'
-import { Input } from 'antd'
 import { IFormInputProps } from '../../../types/InputProps'
 import FormItem from 'antd/lib/form/FormItem'
+import { DatePicker } from 'antd'
 
-const InputText: React.FC<IFormInputProps> = ({
-	control,
-	name,
-	placeholder,
-	label,
-}) => {
+const InputDate: React.FC<IFormInputProps> = ({ control, label, name }) => {
 	return (
 		<FormItem label={label}>
 			<Controller
 				name={name}
 				control={control}
 				render={({ field: { onChange, value } }) => (
-					<Input value={value} onChange={onChange} placeholder={placeholder} />
+					<DatePicker onChange={onChange} value={value} />
 				)}
 			/>
 		</FormItem>
 	)
 }
 
-export default InputText
+export default InputDate

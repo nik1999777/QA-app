@@ -9,6 +9,11 @@ import NotificationsContent from './ContentFormAutoTests/NotificationsContent.js
 import TestManagementContent from './ContentFormAutoTests/TestManagementContent.json'
 import ResultsReportContent from './ContentFormAutoTests/ResultsReportContent.json'
 import AttachmentsContent from './ContentFormAutoTests/AttachmentsContent.json'
+import GenderContent from './ContentForm/GenderContent.json'
+import HobbiesContent from './ContentForm/HobbiesContent.json'
+import LanguageContent from './ContentForm/LanguageContent.json'
+import SubjectsContent from './ContentForm/SubjectsContent.json'
+import StateCityContent from './ContentForm/StateCityContent.json'
 
 export default {
 	CodeContent,
@@ -22,4 +27,9 @@ export default {
 	TestManagementContent,
 	ResultsReportContent,
 	AttachmentsContent,
+	GenderContent,
+	HobbiesContent,
+	LanguageContent,
+	SubjectsContent,
+	StateCityContent,
 }

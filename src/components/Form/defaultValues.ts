@@ -4,7 +4,7 @@ export const defaultValues = {
 	email: '',
 	gender: '',
 	phone: '',
-	birthDate: new Date(),
+	birthDate: '',
 	subjects: [],
 	hobbies: [],
 	state: '',

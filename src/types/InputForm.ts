@@ -4,7 +4,7 @@ export interface IFormInput {
 	email: string
 	gender: string
 	phone: string
-	birthDate: Date
+	birthDate: string
 	subjects: string[]
 	hobbies: string[]
 	state: string

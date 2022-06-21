@@ -8,8 +8,6 @@ import FormResultAnt from '../components/FormResult/FormResultAnt/FormResultAnt'
 const AutoTestsPage = () => {
 	const [data, setData] = useState(undefined)
 
-	console.log(data)
-
 	return (
 		<>
 			<ContainerLeft>

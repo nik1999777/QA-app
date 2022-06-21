@@ -1,7 +1,7 @@
 import { useForm, SubmitHandler } from 'react-hook-form'
 import React from 'react'
 import { defaultValues } from '../defaultValues'
-import FormViews from './FormViews'
+import FormViews from '../FormViews/FormViews'
 import { IFormInput } from '../../../types/InputForm'
 
 const Form: React.FC<any> = ({ setData }) => {

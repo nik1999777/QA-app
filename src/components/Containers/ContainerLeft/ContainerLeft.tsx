@@ -1,12 +1,18 @@
 import { Container } from '@mui/system'
-import { LayoutProps } from '../../Layout/types'
+import { FC } from 'react'
 
 import styles from './ContentLeftLayout.module.scss'
 
-const ContainerLeft = ({ children }: LayoutProps) => {
+interface ContainerProps {
+	children: JSX.Element | JSX.Element[] | undefined
+}
+
+const ContainerLeft: FC<ContainerProps> = ({ children }) => {
 	return (
 		<div className={styles.content__left}>
-			<Container sx={{ mt: '90px' }}>{children}</Container>
+			<Container className={styles.content__left_container}>
+				{children}
+			</Container>
 		</div>
 	)
 }

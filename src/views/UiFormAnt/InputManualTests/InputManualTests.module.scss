@@ -1,0 +1,25 @@
+.border {
+	border: 1px solid var(--gx-color-border-autotest-form);
+	border-radius: 5px;
+	padding: 5px;
+	background-color: var(--gx-color-border-autotest-form);
+}
+
+.icon {
+	font-size: 50px;
+	width: 100px;
+	height: 100px;
+	color: var(--gx-color-border-autotest-plus);
+}
+
+.wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 120px;
+	align-items: center;
+	grid-gap: 10px;
+}
+
+.wrapp {
+	margin-top: 15px;
+	padding-bottom: 15px;
+}

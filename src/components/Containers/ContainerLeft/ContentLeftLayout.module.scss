@@ -1,4 +1,7 @@
 .content__left {
 	background-color: var(--gx-color-content-left);
 	width: 50%;
+	&_container {
+		margin-top: 90px;
+	}
 }

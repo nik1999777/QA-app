@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { styleBoxNavMenu, styleButtonNavMenu } from './style'
 
 const NavMenu = () => {
-	const pages = ['home', 'form-mui', 'autotests', 'form-ant']
+	const pages = ['home', 'autotests', 'form']
 	return (
 		<>
 			<Box sx={styleBoxNavMenu}>
