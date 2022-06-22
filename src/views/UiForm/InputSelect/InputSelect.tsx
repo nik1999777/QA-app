@@ -1,0 +1,87 @@
+import { Select } from 'antd'
+import FormItem from 'antd/lib/form/FormItem'
+import React, { useEffect, useState } from 'react'
+import { Controller } from 'react-hook-form'
+import { IFormInputProps } from '../../../types/InputProps'
+import Box from '../../Common/Box/Box'
+
+import styles from './InputSelect.module.scss'
+
+const { Option } = Select
+const stateData = [
+	'Alabama',
+	'Alaska',
+	'Arizona',
+	'California',
+	'Colorado',
+	'Florida',
+]
+const cityData = {
+	Alabama: ['Jasper', 'Ozark', 'Clanton', 'Florence'],
+	Alaska: ['Kodiak', 'Nome', 'Sitka', 'Ketchikan'],
+	Arizona: ['Mesa', 'Phoenix', 'Kingman', 'Douglas'],
+	California: ['Beverly Hills', 'Los Angeles', 'San Diego', 'San Marino'],
+	Colorado: ['Fort Morgan', 'Montrose', 'Greeley', 'Denver'],
+	Florida: ['Hollywood', 'Miami', 'Orlando', 'Sanford'],
+}
+
+type CityName = keyof typeof cityData
+
+const InputSelect: React.FC<IFormInputProps> = ({
+	name,
+	label,
+	control,
+	placeholder,
+	setValue,
+}) => {
+	const [cities, setCities] = useState(cityData[stateData[0] as CityName])
+	const [secondCity, setSecondCity] = useState(
+		cityData[stateData[0] as CityName][0]
+	)
+
+	const handleProvinceChange = (value: CityName) => {
+		setCities(cityData[value])
+		setSecondCity(cityData[value][0])
+	}
+
+	const onSecondCityChange = (value: CityName) => {
+		setSecondCity(value)
+	}
+
+	useEffect(() => {
+		setValue(name, secondCity)
+	}, [secondCity])
+
+	return (
+		<FormItem label={label}>
+			<Controller
+				control={control}
+				name={name}
+				render={() => (
+					<Box className={styles.box}>
+						<Select
+							style={{ width: '100%' }}
+							onChange={handleProvinceChange}
+							placeholder={placeholder}
+						>
+							{stateData.map(province => (
+								<Option key={province}>{province}</Option>
+							))}
+						</Select>
+						<Select
+							style={{ width: '100%' }}
+							onChange={onSecondCityChange}
+							placeholder={placeholder}
+						>
+							{cities.map((city: any) => (
+								<Option key={city}>{city}</Option>
+							))}
+						</Select>
+					</Box>
+				)}
+			/>
+		</FormItem>
+	)
+}
+
+export default InputSelect

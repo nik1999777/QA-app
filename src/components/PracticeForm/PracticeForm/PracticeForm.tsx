@@ -1,33 +1,33 @@
 import { useForm, SubmitHandler } from 'react-hook-form'
 import React from 'react'
-import AutoTestsFormViews from '../AutoTestsFormViews/AutoTestsFormViews'
 import { defaultValues } from '../defaultValues'
+import PracticeFormViews from '../PracticeFormViews/PracticeFormViews'
+import { IFormInput } from '../types'
 import { Button, Form, Typography } from 'antd'
 import Box from '../../../views/Common/Box/Box'
 
-import styles from './AutoTestsForm.module.scss'
-import { IFormAutoTestsInput } from '../types'
+import styles from './PracticeForm.module.scss'
 
 const { Title } = Typography
 
-const AutoTestsForm: React.FC<any> = ({ setData }) => {
+const PracticeForm: React.FC<any> = ({ setData }) => {
 	const {
 		handleSubmit,
 		control,
 		setValue,
 		reset,
 		formState: { errors },
-	} = useForm<IFormAutoTestsInput>({
+	} = useForm<IFormInput>({
 		defaultValues,
 	})
 
-	const onSubmit: SubmitHandler<IFormAutoTestsInput> = data => setData(data)
+	const onSubmit: SubmitHandler<IFormInput> = data => setData(data)
 
 	return (
 		<>
-			<Title className={styles.title}>Test automation as a Service</Title>
+			<Title>Practice Form</Title>
 			<Form onFinish={handleSubmit(onSubmit)}>
-				<AutoTestsFormViews
+				<PracticeFormViews
 					control={control}
 					setValue={setValue}
 					errors={errors}
@@ -45,4 +45,4 @@ const AutoTestsForm: React.FC<any> = ({ setData }) => {
 	)
 }
 
-export default AutoTestsForm
+export default PracticeForm

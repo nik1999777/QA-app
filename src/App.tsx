@@ -2,8 +2,8 @@ import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout/Layout'
 import HomePage from './pages/HomePage'
-import TestAutomationPage from './pages/AutoTestsPage'
-import FormAntPage from './pages/FormAntPage'
+import AutoTestsFormPage from './pages/AutoTestsFormPage'
+import PracticeFormPage from './pages/PracticeFormPage'
 
 import './styles/index.scss'
 
@@ -12,8 +12,8 @@ const App: React.FC = () => {
 		<Routes>
 			<Route path='/' element={<Layout />}>
 				<Route index element={<HomePage />} />
-				<Route path='autotests' element={<TestAutomationPage />} />
-				<Route path='form' element={<FormAntPage />} />
+				<Route path='autotests' element={<AutoTestsFormPage />} />
+				<Route path='form' element={<PracticeFormPage />} />
 			</Route>
 		</Routes>
 	)

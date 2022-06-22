@@ -1,5 +1,5 @@
 import React from 'react'
-import Ui from '../../../views/UiFormAnt'
+import Ui from '../../../views/UiForm'
 import { IFormViewsProps } from '../../../types/FormViewsProps'
 import styles from './AutoTestsFormViews.module.scss'
 import Box from '../../../views/Common/Box/Box'
@@ -9,7 +9,7 @@ const { Text } = Typography
 import Content from '../../../content'
 
 import { icons } from '../../../assets'
-import InputManualTests from '../../../views/UiFormAnt/InputManualTests/InputManualTests'
+import InputManualTests from '../../../views/UiForm/InputManualTests/InputManualTests'
 
 const renderIcons = (icons: string[]) => {
 	return icons.map(icon => <img width={25} key={icon} src={icon} />)

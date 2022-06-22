@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Grid, Paper, Typography } from '@mui/material'
 
 import styles from './FormResult.module.scss'
-import { IFormInput } from '../../../types/InputForm'
+import { IFormInput } from '../../PracticeForm/types'
 
 type IFormResult = {
 	data: IFormInput
