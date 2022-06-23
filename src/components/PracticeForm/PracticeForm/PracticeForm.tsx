@@ -7,6 +7,7 @@ import { Button, Form, Typography } from 'antd'
 import Box from '../../../views/Common/Box/Box'
 
 import styles from './PracticeForm.module.scss'
+import Footer from '../PracticeFormFooter/PracticeFormFooter'
 
 const { Title } = Typography
 
@@ -39,6 +40,7 @@ const PracticeForm: React.FC<any> = ({ setData }) => {
 					<Button className={styles.wrapper__button} onClick={() => reset()}>
 						Reset
 					</Button>
+					<Footer />
 				</Box>
 			</Form>
 		</>

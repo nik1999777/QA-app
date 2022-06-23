@@ -20,3 +20,30 @@ body {
 	--gx-color-border-autotest-subtitle: #a9a9a9;
 	--gx-color-text-autotest-right: #e6daca;
 }
+
+//ant-design tabs
+
+.ant-tabs-top > .ant-tabs-nav::before,
+.ant-tabs-top > div > .ant-tabs-nav::before {
+	display: none;
+}
+
+.ant-tabs > .ant-tabs-nav .ant-tabs-nav-wrap,
+.ant-tabs > div > .ant-tabs-nav .ant-tabs-nav-wrap {
+	background-color: black;
+}
+
+.ant-tabs-card.ant-tabs-top > .ant-tabs-nav .ant-tabs-tab {
+	background-color: black;
+	border: black;
+	color: white;
+}
+
+.ant-tabs-card.ant-tabs-top > .ant-tabs-nav .ant-tabs-tab-active {
+	background-color: #393939;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+	color: white;
+	text-shadow: none;
+}

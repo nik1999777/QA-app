@@ -1,7 +1,7 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 
 interface BoxProps {
-	children: JSX.Element | JSX.Element[]
+	children: JSX.Element | JSX.Element[] | ReactNode
 	className?: string
 }
 

@@ -3,7 +3,11 @@ import AutoTestsForm from '../components/AutoTestsForm/AutoTestsForm/AutoTestsFo
 import AutoTestsRight from '../components/AutoTestsForm/AutoTestsRight/AutoTestsRight'
 import ContainerLeft from '../components/Containers/ContainerLeft/ContainerLeft'
 import ContainerRight from '../components/Containers/ContainerRight/ConteinerRight'
-import AutoTestsResult from '../components/AutoTestsForm/AutoTestsResult/AutoTestsResult'
+import FormResult from '../components/FormResult/FormResult'
+
+import { Tabs } from 'antd'
+
+const { TabPane } = Tabs
 
 const AutoTestsFormPage = () => {
 	const [data, setData] = useState(undefined)
@@ -14,27 +18,19 @@ const AutoTestsFormPage = () => {
 				<AutoTestsForm setData={setData} />
 			</ContainerLeft>
 			<ContainerRight>
-				<AutoTestsRight />
-				<div
-					style={{
-						padding: '20px',
-					}}
-				>
-					{data ? (
-						<AutoTestsResult data={data} />
-					) : (
-						<div
-							style={{
-								color: 'white',
-								marginTop: '70px',
-								fontSize: '25px',
-								textAlign: 'center',
-							}}
-						>
-							Please enter your data and submit
-						</div>
-					)}
-				</div>
+				<Tabs defaultActiveKey='2' type='card'>
+					<TabPane tab='Result Form' key='1'>
+						{data && <FormResult data={data} />}
+					</TabPane>
+					<TabPane tab='Documentation' key='2'>
+						<AutoTestsRight />
+					</TabPane>
+					<TabPane tab='Console output' key='3'>
+						<p>Content of Tab Pane 3</p>
+						<p>Content of Tab Pane 3</p>
+						<p>Content of Tab Pane 3</p>
+					</TabPane>
+				</Tabs>
 			</ContainerRight>
 		</>
 	)

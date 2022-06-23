@@ -5,7 +5,7 @@ const { Text } = Typography
 const Footer: React.FC = () => {
 	return (
 		<footer className={styles.footer}>
-			<Text>© QA GURU</Text>
+			<Text className={styles.text}>© QA GURU</Text>
 		</footer>
 	)
 }
