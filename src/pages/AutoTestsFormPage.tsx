@@ -20,9 +20,9 @@ const AutoTestsFormPage = () => {
 			</ContainerLeft>
 			<ContainerRight>
 				<Tabs defaultActiveKey='2' type='card'>
-					{/*<TabPane tab='Result Form' key='1'>*/}
-					{/*	{data && <FormResult data={data} />}*/}
-					{/*</TabPane>*/}
+					{/* <TabPane tab='Result Form' key='1'>
+						{data && <FormResult data={data} />}
+					</TabPane> */}
 					<TabPane tab='Documentation' key='2'>
 						<AutoTestsRight />
 					</TabPane>

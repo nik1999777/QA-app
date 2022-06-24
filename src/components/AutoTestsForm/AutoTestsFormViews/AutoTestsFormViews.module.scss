@@ -15,7 +15,10 @@
 			top: -12px;
 		}
 		&_subtitle {
-			margin-top: -20px;
+			position: relative;
+			top: -20px;
+			left: 20px;
+			padding-right: 5px;
 		}
 	}
 }

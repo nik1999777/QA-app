@@ -22,7 +22,7 @@ const PracticeForm: React.FC<any> = ({ setData }) => {
 		formState: { errors },
 	} = useForm<IFormInput>({
 		defaultValues,
-		resolver: yupResolver(validationSchema),
+		// resolver: yupResolver(validationSchema),
 	})
 
 	const onSubmit: SubmitHandler<IFormInput> = data => setData(data)

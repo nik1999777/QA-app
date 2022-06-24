@@ -12,7 +12,7 @@ const NavMenu = () => {
 					<Button
 						sx={styleButtonNavMenu}
 						component={Link}
-						to={page === 'home' ? `/` : `/${page}`}
+						to={page === 'autotests' ? `/` : `/${page}`}
 						key={page}
 					>
 						{page}

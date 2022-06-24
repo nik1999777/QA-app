@@ -36,9 +36,9 @@ const AutoTestsForm: React.FC<any> = ({ setData }) => {
 					<Button className={styles.wrapper__button} htmlType='submit'>
 						Generate
 					</Button>
-					{/*<Button className={styles.wrapper__button} onClick={() => reset()}>*/}
-					{/*	Reset*/}
-					{/*</Button>*/}
+					{/* <Button className={styles.wrapper__button} onClick={() => reset()}>
+						Reset
+					</Button> */}
 				</Box>
 			</Form>
 		</>
