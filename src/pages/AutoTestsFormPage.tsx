@@ -12,6 +12,7 @@ const { TabPane } = Tabs
 
 const AutoTestsFormPage = () => {
 	const [data, setData] = useState(undefined)
+	stompClient.send(`/app/orders/${uuid}`, {}, JSON.stringify(data));
 
 	return (
 		<>
