@@ -34,11 +34,11 @@ const PracticeForm: React.FC<any> = ({ setData }) => {
 				<PracticeFormViews control={control} setValue={setValue} />
 				<Box className={styles.wrapper}>
 					<Button className={styles.wrapper__button} htmlType='submit'>
-						Submit
+						Generate
 					</Button>
-					<Button className={styles.wrapper__button} onClick={() => reset()}>
-						Reset
-					</Button>
+					{/*<Button className={styles.wrapper__button} onClick={() => reset()}>*/}
+					{/*	Reset*/}
+					{/*</Button>*/}
 					<Footer />
 				</Box>
 			</Form>

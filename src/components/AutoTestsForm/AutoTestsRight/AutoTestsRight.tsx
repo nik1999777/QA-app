@@ -10,7 +10,7 @@ const AutoTestsRight = () => {
 			<Text className={styles.title}>URL</Text>
 			<Text className={styles.title}>CODE</Text>
 			<Text className={styles.subtitle}>Generate framework code base:</Text>
-			<Text className={styles.title}>Tests</Text>
+			<Text className={styles.title}>TESTS</Text>
 			<Text className={styles.subtitle}>Generate tests with AI</Text>
 			<Text className={styles.subtitle}>Manual Tests</Text>
 			<Text className={styles.title}>VISUALIZATION</Text>
