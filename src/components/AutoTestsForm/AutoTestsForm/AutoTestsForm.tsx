@@ -19,8 +19,8 @@ const { Title } = Typography
 let stompClient = null
 const uuid = create_UUID()
 function connect() {
-	const socket = new SockJS('https://api-dev.autotests.cloud/ws') // todo add exception
-	// const socket = new SockJS("http://localhost:8080/ws"); // todo add exception
+	// const socket = new SockJS('https://api-dev.autotests.cloud/ws') // todo add exception
+	const socket = new SockJS("http://localhost:8080/ws"); // todo add exception
 	// @ts-ignore
 	stompClient = Stomp.over(socket)
 	// @ts-ignore
@@ -110,9 +110,20 @@ const AutoTestsForm: React.FC<any> = () => {
 
 	const [data, setData] = useState<any>()
 
-	const onSubmit: SubmitHandler<IFormAutoTestsInput> = data => setData(data)
+	const onSubmit: SubmitHandler<IFormAutoTestsInput> = data => {
+		console.log("clicked")
+		if(stompClient) {
+			console.log(data)
+			// @ts-ignore
+			stompClient.send(`/app/orders/${uuid}`, {}, JSON.stringify(data))
+		}
+	}
 
-	stompClient.send(`/app/orders/${uuid}`, {}, JSON.stringify(data))
+	// if(stompClient) {
+	// 	console.log(data)
+	// 	// @ts-ignore
+	// 	stompClient.send(`/app/orders/${uuid}`, {}, JSON.stringify(data))
+	// }
 
 	return (
 		<>
