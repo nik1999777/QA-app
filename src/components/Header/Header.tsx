@@ -5,7 +5,7 @@ import Container from '@mui/material/Container'
 import { styleAppBar } from './style'
 import GamburgerMenu from './GamburgerMenu'
 import Profile from './Profile'
-import Logo from './Logo'
+import Logo from './Logo/Logo'
 
 const Header = () => {
 	return (

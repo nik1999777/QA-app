@@ -34,11 +34,11 @@ const AutoTestsForm: React.FC<any> = ({ setData }) => {
 				/>
 				<Box className={styles.wrapper}>
 					<Button className={styles.wrapper__button} htmlType='submit'>
-						Submit
+						Generate
 					</Button>
-					<Button className={styles.wrapper__button} onClick={() => reset()}>
+					{/* <Button className={styles.wrapper__button} onClick={() => reset()}>
 						Reset
-					</Button>
+					</Button> */}
 				</Box>
 			</Form>
 		</>

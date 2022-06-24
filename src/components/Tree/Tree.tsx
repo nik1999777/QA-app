@@ -174,7 +174,7 @@ const FormTree: React.FC = () => {
 	return (
 		<DirectoryTree
 			multiple
-			defaultExpandAll
+			defaultExpandedKeys={['0-0-0', '0-0-0-3']}
 			onSelect={onSelect}
 			onExpand={onExpand}
 			treeData={treeData}

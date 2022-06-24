@@ -21,9 +21,9 @@ const InputText: React.FC<IFormInputProps> = ({
 				}}
 				name={name}
 				control={control}
-				render={({ field: { onChange, value }, fieldState: { error } }) => (
+				render={({ field: { onChange, value } }) => (
 					<Input
-						status={error && 'error'}
+						// status={error && 'error'}
 						value={value}
 						onChange={onChange}
 						placeholder={placeholder}
