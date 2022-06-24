@@ -11,13 +11,13 @@ import FormTree from '../components/Tree/Tree'
 const { TabPane } = Tabs
 
 const AutoTestsFormPage = () => {
-	const [data, setData] = useState(undefined)
-	stompClient.send(`/app/orders/${uuid}`, {}, JSON.stringify(data));
+	// const [data, setData] = useState(undefined)
+	// stompClient.send(`/app/orders/${uuid}`, {}, JSON.stringify(data));
 
 	return (
 		<>
 			<ContainerLeft>
-				<AutoTestsForm setData={setData} />
+				<AutoTestsForm />
 			</ContainerLeft>
 			<ContainerRight>
 				<Tabs defaultActiveKey='2' type='card'>
