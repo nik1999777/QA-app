@@ -2,6 +2,7 @@ import { Tabs } from 'antd'
 import { useState } from 'react'
 import AutoTestsForm from '../components/AutoTestsForm/AutoTestsForm/AutoTestsForm'
 import AutoTestsRight from '../components/AutoTestsForm/AutoTestsRight/AutoTestsRight'
+import CodeEditor from '../components/CodeEditor/CodeEditor'
 import ContainerLeft from '../components/Containers/ContainerLeft/ContainerLeft'
 import ContainerRight from '../components/Containers/ContainerRight/ConteinerRight'
 import FormResult from '../components/FormResult/FormResult'
@@ -27,6 +28,7 @@ const AutoTestsFormPage = () => {
 					</TabPane>
 					<TabPane tab='Console output' key='3'>
 						<FormTree />
+						<CodeEditor />
 					</TabPane>
 				</Tabs>
 			</ContainerRight>
