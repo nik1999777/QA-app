@@ -23,7 +23,7 @@ const InputRadio: React.FC<IFormInputProps> = ({
 		<FormItem>
 			<p>{label}</p>
 			<Controller
-				gname={name}
+				name={name}
 				control={control}
 				render={({ field: { onChange, value } }) => (
 					<Radio.Group value={value} onChange={onChange}>
