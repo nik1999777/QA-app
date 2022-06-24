@@ -1,11 +1,11 @@
+import { Tabs } from 'antd'
 import { useState } from 'react'
 import AutoTestsForm from '../components/AutoTestsForm/AutoTestsForm/AutoTestsForm'
 import AutoTestsRight from '../components/AutoTestsForm/AutoTestsRight/AutoTestsRight'
 import ContainerLeft from '../components/Containers/ContainerLeft/ContainerLeft'
 import ContainerRight from '../components/Containers/ContainerRight/ConteinerRight'
 import FormResult from '../components/FormResult/FormResult'
-
-import { Tabs } from 'antd'
+import FormTree from '../components/Tree/Tree'
 
 const { TabPane } = Tabs
 
@@ -26,9 +26,7 @@ const AutoTestsFormPage = () => {
 						<AutoTestsRight />
 					</TabPane>
 					<TabPane tab='Console output' key='3'>
-						<p>Content of Tab Pane 3</p>
-						<p>Content of Tab Pane 3</p>
-						<p>Content of Tab Pane 3</p>
+						<FormTree />
 					</TabPane>
 				</Tabs>
 			</ContainerRight>

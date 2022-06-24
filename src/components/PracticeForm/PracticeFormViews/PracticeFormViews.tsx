@@ -10,7 +10,6 @@ import styles from './PracticeFormViews.module.scss'
 const PracticeFormViews: React.FC<IFormViewsProps> = ({
 	control,
 	setValue,
-	errors,
 }) => {
 	return (
 		<>
@@ -44,7 +43,7 @@ const PracticeFormViews: React.FC<IFormViewsProps> = ({
 					name='gender'
 					control={control}
 					label='Gender'
-					errors={errors}
+					// errors={errors}
 					content={Content.GenderContent.options}
 				/>
 				<Ui.InputCheckbox

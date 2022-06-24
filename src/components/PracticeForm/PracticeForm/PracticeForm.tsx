@@ -5,9 +5,11 @@ import PracticeFormViews from '../PracticeFormViews/PracticeFormViews'
 import { IFormInput } from '../types'
 import { Button, Form, Typography } from 'antd'
 import Box from '../../../views/Common/Box/Box'
+import { yupResolver } from '@hookform/resolvers/yup'
+import Footer from '../PracticeFormFooter/PracticeFormFooter'
+import { validationSchema } from '../validation'
 
 import styles from './PracticeForm.module.scss'
-import Footer from '../PracticeFormFooter/PracticeFormFooter'
 
 const { Title } = Typography
 
@@ -20,6 +22,7 @@ const PracticeForm: React.FC<any> = ({ setData }) => {
 		formState: { errors },
 	} = useForm<IFormInput>({
 		defaultValues,
+		resolver: yupResolver(validationSchema),
 	})
 
 	const onSubmit: SubmitHandler<IFormInput> = data => setData(data)
@@ -28,11 +31,7 @@ const PracticeForm: React.FC<any> = ({ setData }) => {
 		<>
 			<Title>Practice Form</Title>
 			<Form onFinish={handleSubmit(onSubmit)}>
-				<PracticeFormViews
-					control={control}
-					setValue={setValue}
-					errors={errors}
-				/>
+				<PracticeFormViews control={control} setValue={setValue} />
 				<Box className={styles.wrapper}>
 					<Button className={styles.wrapper__button} htmlType='submit'>
 						Submit

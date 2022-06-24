@@ -47,3 +47,14 @@ body {
 	color: white;
 	text-shadow: none;
 }
+
+//ant-design tree
+
+.ant-tree.ant-tree-directory .ant-tree-treenode:hover::before {
+	background-color: black;
+}
+
+.ant-tree.ant-tree-directory .ant-tree-treenode-selected:hover::before,
+.ant-tree.ant-tree-directory .ant-tree-treenode-selected::before {
+	background-color: black;
+}

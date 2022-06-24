@@ -15,7 +15,6 @@
 			top: -12px;
 		}
 		&_subtitle {
-			color: var(--gx-color-border-autotest-subtitle);
 			margin-top: -20px;
 		}
 	}
@@ -26,4 +25,10 @@
 	border-radius: 5px;
 	padding: 5px;
 	background-color: var(--gx-color-border-autotest-form);
+}
+
+.wrapp {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 20px;
 }

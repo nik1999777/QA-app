@@ -39,28 +39,30 @@ const AutoTestsFormViews: React.FC<IFormViewsProps> = ({ control }) => {
 			</Box>
 			<Box className={styles.form__wrapper}>
 				<Text className={styles.form__wrapper_text}>TESTS</Text>
-				<Box className={styles.border}>
-					<Ui.InputCheckbox
-						control={control}
-						name='title_check'
-						content={Content.TestsTitleContent.options}
-						label='Generate tests with AI'
-					/>
-					<Text className={styles.form__wrapper_subtitle}>
-						- Open url '' <br /> - Title should be 'All posts in a row / Habr'
-					</Text>
+				<Box className={styles.wrapp}>
+					<Box className={styles.border}>
+						<Ui.InputCheckbox
+							control={control}
+							name='title_check'
+							content={Content.TestsTitleContent.options}
+						/>
+						<Text className={styles.form__wrapper_subtitle}>
+							- Open url '' <br /> - Title should be 'All posts in a row / Habr'
+						</Text>
+					</Box>
+					<Box className={styles.border}>
+						<Ui.InputCheckbox
+							control={control}
+							name='console_check'
+							content={Content.TestsErrorsContent.options}
+						/>
+						<Text className={styles.form__wrapper_subtitle}>
+							- Open url '' <br /> - Console logs should not contain text
+							'SEVERE'
+						</Text>
+					</Box>
 				</Box>
-				<br />
-				<Box className={styles.border}>
-					<Ui.InputCheckbox
-						control={control}
-						name='console_check'
-						content={Content.TestsErrorsContent.options}
-					/>
-					<Text className={styles.form__wrapper_subtitle}>
-						- Open url '' <br /> - Console logs should not contain text 'SEVERE'
-					</Text>
-				</Box>
+
 				<InputManualTests
 					control={control}
 					label='Add manual tests to automate:'
