@@ -1,8 +1,7 @@
 import { Controller } from 'react-hook-form'
 import { Input, Typography } from 'antd'
-import { IFormInputProps } from '../../../types/InputProps'
+import { IFormInputProps } from '../types'
 import FormItem from 'antd/lib/form/FormItem'
-import { WarningOutlined } from '@ant-design/icons'
 
 const { Text } = Typography
 
@@ -16,18 +15,10 @@ const InputText: React.FC<IFormInputProps> = ({
 		<FormItem>
 			<Text>{label}</Text>
 			<Controller
-				rules={{
-					required: true,
-				}}
 				name={name}
 				control={control}
 				render={({ field: { onChange, value } }) => (
-					<Input
-						// status={error && 'error'}
-						value={value}
-						onChange={onChange}
-						placeholder={placeholder}
-					/>
+					<Input value={value} onChange={onChange} placeholder={placeholder} />
 				)}
 			/>
 		</FormItem>

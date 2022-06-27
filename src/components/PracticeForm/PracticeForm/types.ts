@@ -1,4 +1,4 @@
-export interface IFormInput {
+export interface IFormPracticeInput {
 	firstName: string
 	lastName: string
 	email: string

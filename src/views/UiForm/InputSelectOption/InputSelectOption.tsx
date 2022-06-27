@@ -2,7 +2,7 @@ import { Typography } from 'antd'
 import FormItem from 'antd/lib/form/FormItem'
 import React from 'react'
 import { Controller } from 'react-hook-form'
-import { IFormInputProps } from '../../../types/InputProps'
+import { IFormInputProps } from '../types'
 
 import styles from './InputSelectOption.module.scss'
 

@@ -1,14 +1,15 @@
 import { Typography } from 'antd'
 import React, { useEffect, useState } from 'react'
 import Box from '../../views/Common/Box/Box'
-import { IFormInput } from '../PracticeForm/types'
+import { IFormAutoTestsInput } from '../AutoTestsForm/AutoTestsForm/types'
+import { IFormPracticeInput } from '../PracticeForm/PracticeForm/types'
 
 import styles from './FormResult.module.scss'
 
 const { Text } = Typography
 
 type IFormResult = {
-	data: IFormInput
+	data: IFormPracticeInput | IFormAutoTestsInput
 }
 
 const AutoTestsResult: React.FC<IFormResult> = ({ data }) => {

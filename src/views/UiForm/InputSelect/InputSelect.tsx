@@ -2,7 +2,7 @@ import { Select } from 'antd'
 import FormItem from 'antd/lib/form/FormItem'
 import React, { useEffect, useState } from 'react'
 import { Controller } from 'react-hook-form'
-import { IFormInputProps } from '../../../types/InputProps'
+import { IFormInputProps } from '../types'
 import Box from '../../Common/Box/Box'
 
 import styles from './InputSelect.module.scss'
@@ -47,10 +47,6 @@ const InputSelect: React.FC<IFormInputProps> = ({
 	const onSecondCityChange = (value: CityName) => {
 		setSecondCity(value)
 	}
-
-	useEffect(() => {
-		setValue(name, secondCity)
-	}, [secondCity])
 
 	return (
 		<FormItem label={label}>

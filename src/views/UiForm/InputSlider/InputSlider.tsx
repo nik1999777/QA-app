@@ -1,5 +1,5 @@
 import { Controller } from 'react-hook-form'
-import { IFormInputProps } from '../../../types/InputProps'
+import { IFormInputProps } from '../types'
 import FormItem from 'antd/lib/form/FormItem'
 import { Slider } from 'antd'
 

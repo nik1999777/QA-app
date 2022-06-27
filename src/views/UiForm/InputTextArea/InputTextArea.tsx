@@ -1,7 +1,7 @@
 import { Input, Typography } from 'antd'
 import FormItem from 'antd/lib/form/FormItem'
 import { Controller } from 'react-hook-form'
-import { IFormInputProps } from '../../../types/InputProps'
+import { IFormInputProps } from '../types'
 
 const { TextArea } = Input
 const { Text } = Typography

@@ -1,9 +1,10 @@
 import React from 'react'
 import Ui from '../../../views/UiForm'
-import { IFormViewsProps } from '../../../types/FormViewsProps'
 import styles from './AutoTestsFormViews.module.scss'
 import Box from '../../../views/Common/Box/Box'
+import { IAutoFormViewsProps } from './types'
 import { Typography } from 'antd'
+
 const { Text } = Typography
 
 import Content from '../../../content'
@@ -15,7 +16,7 @@ const renderIcons = (icons: string[]) => {
 	return icons.map(icon => <img width={25} key={icon} src={icon} />)
 }
 
-const AutoTestsFormViews: React.FC<IFormViewsProps> = ({ control }) => {
+const AutoTestsFormViews: React.FC<IAutoFormViewsProps> = ({ control }) => {
 	return (
 		<Box className={styles.form}>
 			<Box>{renderIcons(Object.values(icons))}</Box>

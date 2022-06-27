@@ -1,16 +1,13 @@
 import React from 'react'
-import { IFormViewsProps } from '../../../types/FormViewsProps'
 import Ui from '../../../views/UiForm'
 
 import Content from '../../../content'
 import Box from '../../../views/Common/Box/Box'
 
 import styles from './PracticeFormViews.module.scss'
+import { IFormViewsProps } from './types'
 
-const PracticeFormViews: React.FC<IFormViewsProps> = ({
-	control,
-	setValue,
-}) => {
+const PracticeFormViews: React.FC<IFormViewsProps> = ({ control }) => {
 	return (
 		<>
 			<Box className={styles.wrapper}>
@@ -43,12 +40,10 @@ const PracticeFormViews: React.FC<IFormViewsProps> = ({
 					name='gender'
 					control={control}
 					label='Gender'
-					// errors={errors}
 					content={Content.GenderContent.options}
 				/>
 				<Ui.InputCheckbox
 					control={control}
-					setValue={setValue}
 					name='hobbies'
 					label='Hobbies'
 					content={Content.HobbiesContent.options}
@@ -66,14 +61,8 @@ const PracticeFormViews: React.FC<IFormViewsProps> = ({
 				control={control}
 				placeholder='Select'
 				label='Select State and City'
-				setValue={setValue}
 			/>
-			<Ui.InputSlider
-				name='slider'
-				control={control}
-				label='Slider'
-				setValue={setValue}
-			/>
+			<Ui.InputSlider name='slider' control={control} label='Slider' />
 			<Ui.InputTextArea name='address' control={control} label='Address' />
 		</>
 	)
