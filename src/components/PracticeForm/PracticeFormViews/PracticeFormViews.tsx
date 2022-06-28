@@ -50,6 +50,12 @@ const PracticeFormViews: React.FC<IFormViewsProps> = ({ control }) => {
 				/>
 			</Box>
 
+			<Ui.InputFile
+				control={control}
+				name='file'
+				label='file'
+			/>
+
 			<Ui.InputChip
 				name='subjects'
 				control={control}
