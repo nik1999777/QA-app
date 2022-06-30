@@ -7,7 +7,7 @@ import Box from '../../../views/Common/Box/Box'
 
 import styles from './Form.module.scss'
 import { IFormAutoTestsInput } from './types'
-import { SendingMessages } from '../../../services/SendingMessages'
+import {SendingMessages} from "../../../services/Subscribing";
 
 const { Title } = Typography
 
