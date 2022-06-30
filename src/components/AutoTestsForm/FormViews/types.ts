@@ -1,5 +1,5 @@
 import { Control } from 'react-hook-form'
-import { IFormAutoTestsInput } from '../AutoTestsForm/types'
+import { IFormAutoTestsInput } from '../Form/types'
 
 export interface IAutoFormViewsProps {
 	control: Control<IFormAutoTestsInput, object>

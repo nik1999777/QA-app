@@ -1,6 +1,6 @@
 export const defaultValues = {
 	url: '',
-	code: '',
+	stack: '',
 	title_check: false,
 	console_check: false,
 	title_1: '',
@@ -12,7 +12,7 @@ export const defaultValues = {
 	allure_reports: false,
 	attachments: [],
 	source_code: '',
-	CI_CD_tool: '',
+	ci: '',
 	browser_type: '',
 	browsers_hub: '',
 	notification: [],

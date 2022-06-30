@@ -1,7 +1,7 @@
 import { Typography } from 'antd'
 import React, { useEffect, useState } from 'react'
 import Box from '../../views/Common/Box/Box'
-import { IFormAutoTestsInput } from '../AutoTestsForm/AutoTestsForm/types'
+import { IFormAutoTestsInput } from '../AutoTestsForm/Form/types'
 import { IFormPracticeInput } from '../PracticeForm/PracticeForm/types'
 
 import styles from './FormResult.module.scss'

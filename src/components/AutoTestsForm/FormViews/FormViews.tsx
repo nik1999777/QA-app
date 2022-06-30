@@ -1,16 +1,16 @@
 import React from 'react'
 import Ui from '../../../views/UiForm'
-import styles from './AutoTestsFormViews.module.scss'
 import Box from '../../../views/Common/Box/Box'
 import { IAutoFormViewsProps } from './types'
 import { Typography } from 'antd'
+
+import styles from './FormViews.module.scss'
 
 const { Text } = Typography
 
 import Content from '../../../content'
 
 import { icons } from '../../../assets'
-import InputManualTests from '../../../views/UiForm/InputManualTests/InputManualTests'
 
 const renderIcons = (icons: string[]) => {
 	return icons.map(icon => <img width={25} key={icon} src={icon} />)
@@ -31,7 +31,7 @@ const AutoTestsFormViews: React.FC<IAutoFormViewsProps> = ({ control }) => {
 			<Box className={styles.form__wrapper}>
 				<Text className={styles.form__wrapper_text}>CODE</Text>
 				<Ui.InputRadio
-					name='code'
+					name='stack'
 					control={control}
 					label='Generate framework code base:'
 					content={Content.CodeContent.options}
@@ -64,7 +64,7 @@ const AutoTestsFormViews: React.FC<IAutoFormViewsProps> = ({ control }) => {
 					</Box>
 				</Box>
 
-				<InputManualTests
+				<Ui.InputManualTests
 					control={control}
 					label='Add manual tests to automate:'
 					name={''}
@@ -94,7 +94,7 @@ const AutoTestsFormViews: React.FC<IAutoFormViewsProps> = ({ control }) => {
 					content={Content.SourceCodeContent.options}
 				/>
 				<Ui.InputRadio
-					name='CI_CD_tool'
+					name='ci'
 					control={control}
 					label='CI/CD Tool (where to run code)'
 					content={Content.CICDToolContent.options}

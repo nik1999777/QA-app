@@ -2,7 +2,7 @@ import Box from '../../../views/Common/Box/Box'
 import { Typography } from 'antd'
 const { Text } = Typography
 
-import styles from './AutoTestsRight.module.scss'
+import styles from './FormTitles.module.scss'
 
 const AutoTestsRight = () => {
 	return (
