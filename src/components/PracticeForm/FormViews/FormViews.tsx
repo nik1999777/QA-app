@@ -4,10 +4,10 @@ import Ui from '../../../views/UiForm'
 import Content from '../../../content'
 import Box from '../../../views/Common/Box/Box'
 
-import styles from './PracticeFormViews.module.scss'
+import styles from './FormViews.module.scss'
 import { IFormViewsProps } from './types'
 
-const PracticeFormViews: React.FC<IFormViewsProps> = ({ control }) => {
+const FormViews: React.FC<IFormViewsProps> = ({ control }) => {
 	return (
 		<>
 			<Box className={styles.wrapper}>
@@ -68,4 +68,4 @@ const PracticeFormViews: React.FC<IFormViewsProps> = ({ control }) => {
 	)
 }
 
-export default PracticeFormViews
+export default FormViews

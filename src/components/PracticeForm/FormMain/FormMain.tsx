@@ -1,17 +1,17 @@
 import { useForm, SubmitHandler } from 'react-hook-form'
 import React from 'react'
-import { defaultValues } from '../defaultValues'
-import PracticeFormViews from '../PracticeFormViews/PracticeFormViews'
+import { defaultValues } from './defaultValues'
+import PracticeFormViews from '../FormViews/FormViews'
 import { Button, Form, Typography } from 'antd'
 import Box from '../../../views/Common/Box/Box'
-import Footer from '../PracticeFormFooter/PracticeFormFooter'
+import FormFooter from '../FormFooter/FormFooter'
 
-import styles from './PracticeForm.module.scss'
+import styles from './FormMain.module.scss'
 import { IFormPracticeInput } from './types'
 
 const { Title } = Typography
 
-const PracticeForm: React.FC<any> = ({ setData }) => {
+const FormMain: React.FC<any> = ({ setData }) => {
 	const { handleSubmit, control, reset } = useForm<IFormPracticeInput>({
 		defaultValues,
 	})
@@ -30,11 +30,11 @@ const PracticeForm: React.FC<any> = ({ setData }) => {
 					{/*<Button className={styles.wrapper__button} onClick={() => reset()}>*/}
 					{/*	Reset*/}
 					{/*</Button>*/}
-					<Footer />
+					<FormFooter />
 				</Box>
 			</Form>
 		</>
 	)
 }
 
-export default PracticeForm
+export default FormMain

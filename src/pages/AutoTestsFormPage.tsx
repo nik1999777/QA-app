@@ -1,12 +1,13 @@
 import { Tabs } from 'antd'
-import Form from '../components/AutoTestsForm/Form/Form'
-import FormCode from '../components/AutoTestsForm/FormCode/FormCode'
-import FormTitles from '../components/AutoTestsForm/FormTitles/FormTitles'
-import FormTreeCode from '../components/AutoTestsForm/FormTreeCode/FormTreeCode'
+import FormMain from '../components/AutoTestsGenerateForm/FormMain/FormMain'
+import FormCode from '../components/AutoTestsGenerateForm/FormCode/FormCode'
+import FormTitles from '../components/AutoTestsGenerateForm/FormTitles/FormTitles'
+import FormTreeCode from '../components/AutoTestsGenerateForm/FormTreeCode/FormTreeCode'
 import ContainerLeft from '../components/Containers/ContainerLeft/ContainerLeft'
 import ContainerRight from '../components/Containers/ContainerRight/ConteinerRight'
 import { StompSessionProvider } from 'react-stomp-hooks'
-import { Subscribing } from '../services/Subscribing'
+import { Subscribing } from '../services/ServiceWebsocket'
+import CodeEditor from '../components/CodeEditor/CodeEditor'
 
 const { TabPane } = Tabs
 
@@ -17,15 +18,16 @@ const AutoTestsFormPage: React.FC = () => {
 			// url={'https://api.autotests.cloud'}
 		>
 			<ContainerLeft>
-				<Form />
+				<FormMain />
 			</ContainerLeft>
 			<ContainerRight>
 				<Tabs defaultActiveKey='2' type='card'>
-					<TabPane tab='Documentation' key='2'>
+					<TabPane tab='Documentation' key='1'>
 						<FormTitles />
 					</TabPane>
-					<TabPane tab='Console output' key='3'>
-						<FormTreeCode />
+					<TabPane tab='Console output' key='2'>
+						{/* <FormTreeCode /> */}
+						{/* <CodeEditor /> */}
 						<Subscribing />
 					</TabPane>
 				</Tabs>

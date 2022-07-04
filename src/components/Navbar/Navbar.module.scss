@@ -18,6 +18,11 @@
 .logo {
 	width: 200px;
 	float: left;
+	&_img {
+		background-color: #cd5920;
+		padding: 5px;
+		border-radius: 10px;
+	}
 }
 
 .logo a {

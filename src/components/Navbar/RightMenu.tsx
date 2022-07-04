@@ -1,15 +1,11 @@
-import React from 'react'
-import { Menu, Avatar } from 'antd'
+import { Menu } from 'antd'
 import { UserOutlined, CodeOutlined, LogoutOutlined } from '@ant-design/icons'
-
-import styles from './Navbar.module.scss'
 
 const menuItems = [
 	{
 		key: 'user',
 		label: 'User',
 		icon: <UserOutlined />,
-		// type: 'sub2',
 		children: [
 			{
 				key: 'projects',

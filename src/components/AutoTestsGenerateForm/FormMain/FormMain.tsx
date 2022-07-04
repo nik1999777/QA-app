@@ -1,17 +1,17 @@
 import { useForm, SubmitHandler } from 'react-hook-form'
 import React, { useState } from 'react'
 import FormViews from '../FormViews/FormViews'
-import { defaultValues } from '../defaultValues'
+import { defaultValues } from './defaultValues'
 import { Button, Form, Typography } from 'antd'
 import Box from '../../../views/Common/Box/Box'
 
-import styles from './Form.module.scss'
+import styles from './FormMain.module.scss'
 import { IFormAutoTestsInput } from './types'
-import { SendingMessages } from '../../../services/SendingMessages'
+import { SendingMessages } from '../../../services/ServiceWebsocket'
 
 const { Title } = Typography
 
-const AutoTestsForm: React.FC = () => {
+const FormMain: React.FC = () => {
 	const { handleSubmit, control, reset } = useForm<IFormAutoTestsInput>({
 		defaultValues,
 	})
@@ -38,4 +38,4 @@ const AutoTestsForm: React.FC = () => {
 	)
 }
 
-export default AutoTestsForm
+export default FormMain
