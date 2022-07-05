@@ -1,6 +1,7 @@
 import { Serializer } from 'jsonapi-serializer'
+import { IFormAutoTestsInput } from '../../components/AutoTestsGenerateForm/FormMain/types'
 
-const serializer = (data: any) => {
+const serializer = (data: IFormAutoTestsInput) => {
 	const {
 		url,
 		stack,

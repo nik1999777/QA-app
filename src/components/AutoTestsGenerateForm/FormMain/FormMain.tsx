@@ -2,17 +2,16 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import React, { useState } from 'react'
 import FormViews from '../FormViews/FormViews'
 import { defaultValues } from './defaultValues'
-import { Button, Form, Typography } from 'antd'
+import { Form, Typography } from 'antd'
 import Box from '../../../views/Common/Box/Box'
-
 import styles from './FormMain.module.scss'
 import { IFormAutoTestsInput } from './types'
-import { SendingMessages } from '../../../services/ServiceWebsocket'
+import { SendingMessages } from '../../../services/SendingMessages'
 
 const { Title } = Typography
 
-const FormMain: React.FC = () => {
-	const { handleSubmit, control, reset } = useForm<IFormAutoTestsInput>({
+const FormMain: React.FC<any> = () => {
+	const { handleSubmit, control } = useForm<IFormAutoTestsInput>({
 		defaultValues,
 	})
 
@@ -29,9 +28,6 @@ const FormMain: React.FC = () => {
 				<FormViews control={control} />
 				<Box className={styles.wrapper}>
 					<SendingMessages data={data} />
-					<Button className={styles.wrapper__button} onClick={() => reset()}>
-						Reset
-					</Button>
 				</Box>
 			</Form>
 		</>

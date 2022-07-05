@@ -1,8 +1,8 @@
 export interface IFormAutoTestsInput {
 	url: string
-	code: string
-	title_check: boolean
-	console_check: boolean
+	stack: string
+	title_check: string[]
+	console_check: string[]
 	manual: string
 	title_1: string
 	title_2: string
@@ -10,10 +10,10 @@ export interface IFormAutoTestsInput {
 	steps_1: string
 	steps_2: string
 	steps_3: string
-	allure_reports: boolean
+	allure_reports: string[]
 	attachments: string[]
 	source_code: string
-	CI_CD_tool: string
+	ci: string
 	browser_type: string
 	browsers_hub: string
 	notification: string[]
