@@ -7,7 +7,7 @@ import InputDate from './InputDate/InputDate'
 import InputChip from './InputChip/InputChip'
 import InputSelect from './InputSelect/InputSelect'
 import InputSlider from './InputSlider/InputSlider'
-import InputFile from './InputFile/InputFile'
+import InputManualTests from './InputManualTests/InputManualTests'
 
 export default {
 	InputText,
@@ -19,5 +19,5 @@ export default {
 	InputChip,
 	InputSelect,
 	InputSlider,
-	InputFile
+	InputManualTests,
 }

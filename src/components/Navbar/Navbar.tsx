@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Layout, Button, Drawer } from 'antd'
 import RightMenu from './RightMenu'
 import { MenuOutlined } from '@ant-design/icons'
@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom'
 import LeftMenu from './LeftMenu'
 
 import styles from './Navbar.module.scss'
+import { logo } from '../../assets'
 
 const Navbar = () => {
 	const [visible, setVisible] = useState(false)
@@ -27,7 +28,7 @@ const Navbar = () => {
 			<Layout>
 				<Layout.Header className={styles.nav_header}>
 					<div className={styles.logo}>
-						<h3 className={styles.brand_font}>Brand Here</h3>
+						<img src={logo} className={styles.logo_img} />
 					</div>
 					<div className={styles.navbar_menu}>
 						<div className={styles.leftMenu}>

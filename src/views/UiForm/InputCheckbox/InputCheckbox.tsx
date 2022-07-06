@@ -1,8 +1,10 @@
-import { Checkbox, Space } from 'antd'
+import { Checkbox, Space, Typography } from 'antd'
 import FormItem from 'antd/lib/form/FormItem'
 import React from 'react'
 import { Controller } from 'react-hook-form'
 import { IFormInputProps } from '../types'
+
+const { Text } = Typography
 
 const InputCheckbox: React.FC<IFormInputProps> = ({
 	name,
@@ -21,7 +23,7 @@ const InputCheckbox: React.FC<IFormInputProps> = ({
 
 	return (
 		<FormItem>
-			<p>{label}</p>
+			<Text style={{ display: 'block', marginBottom: '10px' }}>{label}</Text>
 			<Controller
 				name={name}
 				control={control}

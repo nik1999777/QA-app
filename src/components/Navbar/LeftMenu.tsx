@@ -1,8 +1,12 @@
-import React from 'react'
 import { Menu } from 'antd'
-import { Link, useNavigate } from 'react-router-dom'
+import { MenuMode } from 'antd/lib/menu'
+import { useNavigate } from 'react-router-dom'
 
-const LeftMenu = ({ mode }: any) => {
+interface ILeftMenu {
+	mode: MenuMode | any
+}
+
+const LeftMenu: React.FC<ILeftMenu> = ({ mode }) => {
 	const navigate = useNavigate()
 
 	const menuItems = [

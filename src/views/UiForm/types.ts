@@ -1,7 +1,7 @@
 import { UseFormSetValue } from 'react-hook-form'
 
-import { IFormAutoTestsInput } from '../../components/AutoTestsForm/AutoTestsForm/types'
-import { IFormPracticeInput } from '../../components/PracticeForm/PracticeForm/types'
+import { IFormAutoTestsInput } from '../../components/AutoTestsGenerateForm/FormMain/types'
+import { IFormPracticeInput } from '../../components/PracticeForm/FormMain/types'
 
 type IFormInput = IFormAutoTestsInput | IFormPracticeInput
 

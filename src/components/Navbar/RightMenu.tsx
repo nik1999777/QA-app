@@ -1,15 +1,16 @@
-import React from 'react'
-import { Menu, Avatar } from 'antd'
+import { Menu } from 'antd'
 import { UserOutlined, CodeOutlined, LogoutOutlined } from '@ant-design/icons'
+import { MenuMode } from 'antd/lib/menu'
 
-import styles from './Navbar.module.scss'
+interface ILeftMenu {
+	mode: MenuMode
+}
 
 const menuItems = [
 	{
 		key: 'user',
 		label: 'User',
 		icon: <UserOutlined />,
-		// type: 'sub2',
 		children: [
 			{
 				key: 'projects',
@@ -30,7 +31,7 @@ const menuItems = [
 	},
 ]
 
-const RightMenu = ({ mode }: any) => {
+const RightMenu: React.FC<ILeftMenu> = ({ mode }: any) => {
 	return <Menu mode={mode} items={menuItems}></Menu>
 }
 
