@@ -10,12 +10,13 @@ export interface IFormAutoTestsInput {
 	steps_1: string
 	steps_2: string
 	steps_3: string
-	allure_reports: string[]
+	allure_report: string[]
 	attachments: string[]
 	source_code: string
 	ci: string
 	browser_type: string
 	browsers_hub: string
 	notification: string[]
-	test_management: string[]
+	test_management: string
+	issue_tracker: string
 }
