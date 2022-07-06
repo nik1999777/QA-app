@@ -4,7 +4,7 @@ const { Text } = Typography
 
 import styles from './FormTitles.module.scss'
 
-const AutoTestsRight = () => {
+const AutoTestsRight: React.FC = () => {
 	return (
 		<Box className={styles.wrapper}>
 			<Text className={styles.title}>URL</Text>

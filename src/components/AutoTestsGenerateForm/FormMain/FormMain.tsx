@@ -6,16 +6,16 @@ import { Form, Typography } from 'antd'
 import Box from '../../../views/Common/Box/Box'
 import styles from './FormMain.module.scss'
 import { IFormAutoTestsInput } from './types'
-import { SendingMessages } from '../../../services/SendingMessages'
+import { SendingMessages } from '../SendingMessages/SendingMessages'
 
 const { Title } = Typography
 
-const FormMain: React.FC<any> = () => {
+const FormMain: React.FC = () => {
 	const { handleSubmit, control } = useForm<IFormAutoTestsInput>({
 		defaultValues,
 	})
 
-	const [data, setData] = useState<any>()
+	const [data, setData] = useState<IFormAutoTestsInput>()
 
 	const onSubmit: SubmitHandler<IFormAutoTestsInput> = data => {
 		setData(data)

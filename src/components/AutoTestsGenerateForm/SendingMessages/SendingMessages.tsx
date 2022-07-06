@@ -1,10 +1,11 @@
 import { Button } from 'antd'
 import { useEffect, useState } from 'react'
 import { useStompClient } from 'react-stomp-hooks'
-import serializer from '../utils/serializers/serializer'
-import { uuid } from '../utils/StringUtils'
+import serializer from '../../../utils/serializers/serializer'
+import { uuid } from '../../../utils/StringUtils'
+import { ISendingMessages } from './types'
 
-export const SendingMessages = ({ data }: any) => {
+export const SendingMessages: React.FC<ISendingMessages> = ({ data }) => {
 	const stompClient = useStompClient()
 
 	const [visible, setVisible] = useState<boolean>(false)
@@ -12,7 +13,7 @@ export const SendingMessages = ({ data }: any) => {
 	useEffect(() => {
 		setVisible(!visible)
 
-		if (stompClient) {
+		if (stompClient && data) {
 			stompClient.publish({
 				destination: `/app/orders/${uuid}`,
 				body: serializer(data),

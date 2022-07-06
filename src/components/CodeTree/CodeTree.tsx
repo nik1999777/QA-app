@@ -1,14 +1,14 @@
 import { Tree } from 'antd'
 import React from 'react'
-
+import styles from './CodeTree.module.scss'
+import { ICodeTree } from './types'
 const { DirectoryTree } = Tree
 
-import styles from './CodeTree.module.scss'
-
-const CodeTree: React.FC<any> = ({
+const CodeTree: React.FC<ICodeTree> = ({
 	treeData,
 	defaultExpandedKeys,
 	onSelect,
+	defaultSelectedKeys,
 }) => {
 	return (
 		<DirectoryTree
@@ -17,6 +17,7 @@ const CodeTree: React.FC<any> = ({
 			onSelect={onSelect}
 			treeData={treeData}
 			className={styles.tree}
+			defaultSelectedKeys={defaultSelectedKeys}
 		/>
 	)
 }

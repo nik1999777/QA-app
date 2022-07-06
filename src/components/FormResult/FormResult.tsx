@@ -1,19 +1,15 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Typography } from 'antd'
 import React, { useEffect, useState } from 'react'
 import Box from '../../views/Common/Box/Box'
-import { IFormAutoTestsInput } from '../AutoTestsGenerateForm/FormMain/types'
-import { IFormPracticeInput } from '../PracticeForm/FormMain/types'
-
 import styles from './FormResult.module.scss'
-
+import { IFormResult } from './types'
 const { Text } = Typography
-
-type IFormResult = {
-	data: IFormPracticeInput | IFormAutoTestsInput
-}
 
 const AutoTestsResult: React.FC<IFormResult> = ({ data }) => {
 	const arrayData: any[] = Object.entries(data)
+
+	console.log(arrayData)
 
 	const [linesShown, setLinesShown] = useState(0)
 
