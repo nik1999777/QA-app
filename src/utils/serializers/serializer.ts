@@ -54,72 +54,72 @@ const serializer = (data: IFormAutoTestsInput) => {
 					steps: steps_3,
 				},
 			],
-			visualization: {
-				'allure-reports': allure_reports && allure_reports[0],
-				attachments: [
-					{
-						name: 'screenshots',
-						generate: attachments[0] ? true : false,
-					},
-					{
-						name: 'video',
-						generate: attachments[1] ? true : false,
-					},
-					{
-						name: 'console_logs',
-						generate: attachments[2] ? true : false,
-					},
-					{
-						name: 'network_logs',
-						generate: attachments[3] ? true : false,
-					},
-					{
-						name: 'page_source',
-						generate: attachments[4] ? true : false,
-					},
-				],
-			},
-			source_code: source_code,
-			ci: ci,
-			browser_type: browser_type,
-			browsers_hub: browsers_hub,
-			notification: [
+		},
+		visualization: {
+			allure_eports: allure_reports && allure_reports[0],
+			attachments: [
 				{
-					name: 'email',
-					generate: notification[0] ? true : false,
+					name: 'screenshots',
+					generate: attachments[0] ? true : false,
 				},
 				{
-					name: 'telegram',
-					generate: notification[1] ? true : false,
+					name: 'video',
+					generate: attachments[1] ? true : false,
 				},
 				{
-					name: 'slack',
-					generate: notification[2] ? true : false,
+					name: 'console_logs',
+					generate: attachments[2] ? true : false,
 				},
 				{
-					name: 'skype',
-					generate: notification[3] ? true : false,
+					name: 'network_logs',
+					generate: attachments[3] ? true : false,
 				},
 				{
-					name: 'mattermost',
-					generate: notification[4] ? true : false,
-				},
-				{
-					name: 'icq',
-					generate: notification[5] ? true : false,
-				},
-			],
-			test_management: [
-				{
-					name: 'allure-testops',
-					generate: test_management[0] ? true : false,
-				},
-				{
-					name: 'jira',
-					generate: test_management[1] ? true : false,
+					name: 'page_source',
+					generate: attachments[4] ? true : false,
 				},
 			],
 		},
+		source_code: source_code,
+		ci: ci,
+		browser_type: browser_type,
+		browsers_hub: browsers_hub,
+		notification: [
+			{
+				name: 'email',
+				generate: notification[0] ? true : false,
+			},
+			{
+				name: 'telegram',
+				generate: notification[1] ? true : false,
+			},
+			{
+				name: 'slack',
+				generate: notification[2] ? true : false,
+			},
+			{
+				name: 'skype',
+				generate: notification[3] ? true : false,
+			},
+			{
+				name: 'mattermost',
+				generate: notification[4] ? true : false,
+			},
+			{
+				name: 'icq',
+				generate: notification[5] ? true : false,
+			},
+		],
+		test_management: [
+			{
+				name: 'allure_testops',
+				generate: test_management[0] ? true : false,
+			},
+			{
+				name: 'jira',
+				generate: test_management[1] ? true : false,
+			},
+		],
 	})
 
 	json.serialize(data)
