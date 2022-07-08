@@ -9,7 +9,7 @@ export const defaultValues = {
 	steps_1: '',
 	steps_2: '',
 	steps_3: '',
-	allure_reports: [],
+	allure_report: [],
 	attachments: [],
 	source_code: '',
 	ci: '',

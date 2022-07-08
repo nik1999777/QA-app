@@ -73,7 +73,7 @@ const AutoTestsFormViews: React.FC<IAutoFormViewsProps> = ({ control }) => {
 			<Box className={styles.form__wrapper}>
 				<Text className={styles.form__wrapper_text}>VISUALIZATION</Text>
 				<Ui.InputCheckbox
-					name='allure_reports'
+					name='allure_report'
 					control={control}
 					label='Tests results report'
 					content={Content.ResultsReportContent.options}

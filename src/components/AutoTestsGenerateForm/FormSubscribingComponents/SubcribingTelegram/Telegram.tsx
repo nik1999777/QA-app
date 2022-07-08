@@ -1,5 +1,4 @@
 import { IFormSubscribingComponent } from '../types'
-
 import styles from './Telegram.module.scss'
 
 export const Telegram: React.FC<IFormSubscribingComponent> = content => {

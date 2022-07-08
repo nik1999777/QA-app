@@ -1,21 +1,26 @@
-import React, { useState } from 'react'
-import CodeTree from '../../../CodeTree/CodeTree'
+import React, { useEffect, useState } from 'react'
+import CodeTree from '../../../../CodeTree/CodeTree'
 import type { DirectoryTreeProps } from 'antd/lib/tree'
-import ContentTree from '../../../../content/ContentTree'
-import CodeContent from '../../../../content/ContentCode'
-import CodeEditor from '../../../CodeEditor/CodeEditor'
+import ContentTree from '../../../../../content/ContentTree'
+import CodeContent from '../../../../../content/ContentCode'
+import CodeEditor from '../../../../CodeEditor/CodeEditor'
+import FadeIn from 'react-fade-in'
 
-const TreeCode: React.FC = () => {
+const GithubTree: React.FC = () => {
 	const onSelect: DirectoryTreeProps['onSelect'] = (keys, info) => {
-		console.log(info.node.title)
 		if (info.node.isLeaf === true) {
 			setTitle(info.node.title)
 		}
 	}
 
 	const [title, setTitle] = useState<unknown>()
+	const [show, setShow] = useState(false)
 
-	const renderComponents = () => {
+	useEffect(() => {
+		setTimeout(() => setShow(true), 2500)
+	}, [title])
+
+	const renderCodeComponents = () => {
 		switch (title) {
 			case 'App.java':
 				return <CodeEditor code={CodeContent.AppContent} />
@@ -56,9 +61,9 @@ const TreeCode: React.FC = () => {
 				defaultExpandedKeys={['0-0-0', '0-0-0-3']}
 				defaultSelectedKeys={['0-0-0-3-1']}
 			/>
-			{renderComponents()}
+			{show && <FadeIn>{renderCodeComponents()}</FadeIn>}
 		</>
 	)
 }
 
-export default TreeCode
+export default GithubTree

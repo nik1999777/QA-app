@@ -9,7 +9,7 @@ const { Text } = Typography
 const AutoTestsResult: React.FC<IFormResult> = ({ data }) => {
 	const arrayData: any[] = Object.entries(data)
 
-	console.log(arrayData)
+	// console.log(arrayData)
 
 	const [linesShown, setLinesShown] = useState(0)
 

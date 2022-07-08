@@ -1,7 +1,7 @@
 import { Serializer } from 'jsonapi-serializer'
 import { IFormAutoTestsInput } from '../../components/AutoTestsGenerateForm/FormMain/types'
 
-const serializer = (data: IFormAutoTestsInput) => {
+const dataSerialize = (data: IFormAutoTestsInput) => {
 	const {
 		url,
 		stack,
@@ -13,7 +13,7 @@ const serializer = (data: IFormAutoTestsInput) => {
 		steps_2,
 		title_3,
 		steps_3,
-		allure_reports,
+		allure_report,
 		attachments,
 		source_code,
 		ci,
@@ -56,7 +56,9 @@ const serializer = (data: IFormAutoTestsInput) => {
 			],
 		},
 		visualization: {
-			allure_eports: allure_reports && allure_reports[0],
+			allure_report:
+				(allure_report && allure_report[0]) ||
+				(allure_report === null && false),
 			attachments: [
 				{
 					name: 'screenshots',
@@ -110,21 +112,19 @@ const serializer = (data: IFormAutoTestsInput) => {
 				generate: notification[5] ? true : false,
 			},
 		],
-		test_management: [
-			{
-				name: 'allure_testops',
-				generate: test_management[0] ? true : false,
-			},
-			{
-				name: 'jira',
-				generate: test_management[1] ? true : false,
-			},
-		],
+		test_management: {
+			name: 'allure_testops',
+			generate: test_management[0] ? true : false,
+		},
+		issue_tracker: {
+			name: 'jira',
+			generate: test_management[1] ? true : false,
+		},
 	})
 
 	json.serialize(data)
 
-	return JSON.stringify(json)
+	return JSON.stringify(json, null, 2)
 }
 
-export default serializer
+export default dataSerialize
