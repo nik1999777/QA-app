@@ -61,6 +61,7 @@ const GithubTree: React.FC = () => {
 				defaultExpandedKeys={['0-0-0', '0-0-0-3']}
 				defaultSelectedKeys={['0-0-0-3-1']}
 			/>
+
 			{show && <FadeIn>{renderCodeComponents()}</FadeIn>}
 		</>
 	)

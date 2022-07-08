@@ -3,7 +3,7 @@
 	grid-gap: 30px;
 
 	&__wrapper {
-		border: 1px solid black;
+		border: 1px solid var(--gx-color-text-black);
 		padding: 0 10px;
 		&_text {
 			font-weight: 600;

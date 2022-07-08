@@ -1,7 +1,7 @@
 import ContainerLeft from '../components/Containers/ContainerLeft/ContainerLeft'
 import ContainerRight from '../components/Containers/ContainerRight/ConteinerRight'
 
-const HomePage = () => {
+const Kanban: React.FC = () => {
 	return (
 		<>
 			<ContainerLeft>
@@ -14,4 +14,4 @@ const HomePage = () => {
 	)
 }
 
-export default HomePage
+export default Kanban

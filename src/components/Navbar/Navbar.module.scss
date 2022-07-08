@@ -1,7 +1,7 @@
 .navbar {
 	padding-bottom: 1px;
 	border-bottom: solid 1px #e8e8e8;
-	background-color: white;
+	background-color: var(--gx-color-text-white);
 	box-shadow: 0 3px 6px -2px rgba(0, 0, 0, 0.12),
 		0 6px 16px -11px rgba(0, 0, 0, 0.08);
 	position: sticky;
@@ -10,7 +10,7 @@
 }
 
 .nav_header {
-	background-color: white;
+	background-color: var(--gx-color-text-white);
 	border-bottom: 0;
 	padding: 0 4px 0 24px;
 }
@@ -19,7 +19,7 @@
 	width: 200px;
 	float: left;
 	&_img {
-		background-color: #cd5920;
+		background-color: var(--gx-color-text-autotest-orange);
 		padding: 5px;
 		border-radius: 10px;
 	}

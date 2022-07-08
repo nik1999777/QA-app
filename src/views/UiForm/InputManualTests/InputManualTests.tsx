@@ -1,8 +1,7 @@
 import { IFormInputProps } from '../types'
 import { Box } from '@mui/material'
 import { PlusCircleOutlined } from '@ant-design/icons'
-import Ui from '..'
-
+import Ui from '../'
 import styles from './InputManualTests.module.scss'
 import { Typography } from 'antd'
 

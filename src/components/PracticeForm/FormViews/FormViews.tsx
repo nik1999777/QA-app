@@ -1,9 +1,7 @@
 import React from 'react'
 import Ui from '../../../views/UiForm'
-
 import Content from '../../../content'
 import Box from '../../../views/Common/Box/Box'
-
 import styles from './FormViews.module.scss'
 import { IFormViewsProps } from './types'
 

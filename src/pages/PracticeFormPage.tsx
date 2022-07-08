@@ -5,7 +5,7 @@ import FormResult from '../components/FormResult/FormResult'
 import PracticeForm from '../components/PracticeForm/FormMain/FormMain'
 import Box from '../views/Common/Box/Box'
 
-const PracticeFormPage = () => {
+const PracticeFormPage: React.FC = () => {
 	const [data, setData] = useState()
 
 	return (

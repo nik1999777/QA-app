@@ -19,10 +19,11 @@ body {
 	--gx-color-border-autotest-plus: grey;
 	--gx-color-border-autotest-subtitle: #a9a9a9;
 	--gx-color-text-autotest-right: #e6daca;
+	--gx-color-text-autotest-orange: #cd5920;
+	--gx-color-practice-form-footer: #8e98a0;
 }
 
 //ant-design tabs
-
 .ant-tabs-top > .ant-tabs-nav::before,
 .ant-tabs-top > div > .ant-tabs-nav::before {
 	display: none;
@@ -49,7 +50,6 @@ body {
 }
 
 //ant-design tree
-
 .ant-tree.ant-tree-directory .ant-tree-treenode:hover::before {
 	background-color: black;
 }
@@ -60,13 +60,11 @@ body {
 }
 
 //ant-design navbar
-
 .ant-layout-header {
 	background: white;
 }
 
-//
-
+//code-editor
 .cm-scroller {
 	background-color: #393939;
 }

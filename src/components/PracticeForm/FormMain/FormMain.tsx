@@ -5,13 +5,12 @@ import PracticeFormViews from '../FormViews/FormViews'
 import { Button, Form, Typography } from 'antd'
 import Box from '../../../views/Common/Box/Box'
 import FormFooter from '../FormFooter/FormFooter'
-
 import styles from './FormMain.module.scss'
-import { IFormPracticeInput } from './types'
+import { IFormMainProps, IFormPracticeInput } from './types'
 
 const { Title } = Typography
 
-const FormMain: React.FC<any> = ({ setData }) => {
+const FormMain: React.FC<IFormMainProps> = ({ setData }) => {
 	const { handleSubmit, control, reset } = useForm<IFormPracticeInput>({
 		defaultValues,
 	})
@@ -27,9 +26,9 @@ const FormMain: React.FC<any> = ({ setData }) => {
 					<Button className={styles.wrapper__button} htmlType='submit'>
 						Generate
 					</Button>
-					{/*<Button className={styles.wrapper__button} onClick={() => reset()}>*/}
-					{/*	Reset*/}
-					{/*</Button>*/}
+					{/* <Button className={styles.wrapper__button} onClick={() => reset()}>
+						Reset
+					</Button> */}
 					<FormFooter />
 				</Box>
 			</Form>

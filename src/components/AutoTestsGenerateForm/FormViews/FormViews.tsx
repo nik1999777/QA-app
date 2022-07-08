@@ -3,14 +3,10 @@ import Ui from '../../../views/UiForm'
 import Box from '../../../views/Common/Box/Box'
 import { IAutoFormViewsProps } from './types'
 import { Typography } from 'antd'
-
 import styles from './FormViews.module.scss'
-
-const { Text } = Typography
-
 import Content from '../../../content'
-
 import { icons } from '../../../assets'
+const { Text } = Typography
 
 const renderIcons = (icons: string[]) => {
 	return icons.map(icon => <img width={25} key={icon} src={icon} />)

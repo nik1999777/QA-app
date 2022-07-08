@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface IFormPracticeInput {
 	firstName: string
 	lastName: string
@@ -12,4 +13,8 @@ export interface IFormPracticeInput {
 	address: string
 	language: string
 	file: string
+}
+
+export interface IFormMainProps {
+	setData: any
 }
