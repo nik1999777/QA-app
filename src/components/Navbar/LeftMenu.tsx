@@ -18,10 +18,10 @@ const LeftMenu: React.FC<ILeftMenu> = ({ mode }) => {
 			},
 		},
 		{
-			key: 'home',
-			label: 'Home',
+			key: 'kanban',
+			label: 'Kanban',
 			onClick: () => {
-				navigate('/home')
+				navigate('/kanban')
 			},
 		},
 		{

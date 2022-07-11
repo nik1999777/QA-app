@@ -8,8 +8,10 @@ import InputChip from './InputChip/InputChip'
 import InputSelect from './InputSelect/InputSelect'
 import InputSlider from './InputSlider/InputSlider'
 import InputManualTests from './InputManualTests/InputManualTests'
+import InputFileUploud from './InputFileUploud/InputFileUploud'
 
 export default {
+	InputFileUploud,
 	InputText,
 	InputRadio,
 	InputCheckbox,

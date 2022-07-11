@@ -5,31 +5,32 @@ import PracticeFormViews from '../FormViews/FormViews'
 import { Button, Form, Typography } from 'antd'
 import Box from '../../../views/Common/Box/Box'
 import FormFooter from '../FormFooter/FormFooter'
-
 import styles from './FormMain.module.scss'
-import { IFormPracticeInput } from './types'
+import { IFormMainProps, IFormPracticeInput } from './types'
 
 const { Title } = Typography
 
-const FormMain: React.FC<any> = ({ setData }) => {
-	const { handleSubmit, control, reset } = useForm<IFormPracticeInput>({
+const FormMain: React.FC<IFormMainProps> = ({ setData }) => {
+	const { handleSubmit, control, setValue } = useForm<IFormPracticeInput>({
 		defaultValues,
 	})
 
-	const onSubmit: SubmitHandler<IFormPracticeInput> = data => setData(data)
+	const onSubmit: SubmitHandler<IFormPracticeInput> = data => {
+		setData(data), console.log(data)
+	}
 
 	return (
 		<>
 			<Title>Practice Form</Title>
 			<Form onFinish={handleSubmit(onSubmit)}>
-				<PracticeFormViews control={control} />
+				<PracticeFormViews setValue={setValue} control={control} />
 				<Box className={styles.wrapper}>
 					<Button className={styles.wrapper__button} htmlType='submit'>
 						Generate
 					</Button>
-					{/*<Button className={styles.wrapper__button} onClick={() => reset()}>*/}
-					{/*	Reset*/}
-					{/*</Button>*/}
+					{/* <Button className={styles.wrapper__button} onClick={() => reset()}>
+						Reset
+					</Button> */}
 					<FormFooter />
 				</Box>
 			</Form>

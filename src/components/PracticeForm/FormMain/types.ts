@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface IFormPracticeInput {
 	firstName: string
 	lastName: string
@@ -11,5 +12,9 @@ export interface IFormPracticeInput {
 	slider: number
 	address: string
 	language: string
-	file: string
+	file: any
+}
+
+export interface IFormMainProps {
+	setData: any
 }

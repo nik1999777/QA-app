@@ -5,7 +5,6 @@ import ContainerLeft from '../components/Containers/ContainerLeft/ContainerLeft'
 import ContainerRight from '../components/Containers/ContainerRight/ConteinerRight'
 import { StompSessionProvider } from 'react-stomp-hooks'
 import { Subscribing } from '../components/AutoTestsGenerateForm/Subscribing/Subscribing'
-
 const { TabPane } = Tabs
 
 const AutoTestsFormPage: React.FC = () => {

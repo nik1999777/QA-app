@@ -2,13 +2,13 @@
 import { IMessage } from '@stomp/stompjs'
 import { useState } from 'react'
 import { useSubscription } from 'react-stomp-hooks'
-import { uuid } from '../../../utils/StringUtils'
-import { Github } from '../FormSubscribingComponents/Github/Github'
-import { Telegram } from '../FormSubscribingComponents/Telegram/Telegram'
-import { Jenkins } from '../FormSubscribingComponents/Jenkins/Jenkins'
-import { JenkinsLog } from '../FormSubscribingComponents/JenkinsLog/JenkinsLog'
-import TreeCode from '../FormSubscribingComponents/TreeCode/TreeCode'
-import { AnyText } from '../FormSubscribingComponents/AnyText/AnyText'
+import { Telegram } from '../FormSubscribingComponents/SubcribingTelegram/Telegram'
+import { Jenkins } from '../FormSubscribingComponents/SubcribingJenkins/Jenkins'
+import { JenkinsLog } from '../FormSubscribingComponents/SubcribingJenkinsLog/JenkinsLog'
+import { uuid } from '../../../utils/stringUtils'
+import SubcribingAnyText from '../FormSubscribingComponents/SubcribingAnyText/SubcribingAnyText'
+import SubcribingGithub from '../FormSubscribingComponents/SubcribingGithub/SubcribingGithub'
+import FadeIn from 'react-fade-in'
 
 export const Subscribing: React.FC = () => {
 	const [messages, setMessages] = useState<string[]>([])
@@ -25,7 +25,7 @@ export const Subscribing: React.FC = () => {
 	return (
 		<>
 			{messages.map((message, i) => (
-				<div key={`message-${i}`}>{message}</div>
+				<FadeIn key={`message-${i}`}>{message}</FadeIn>
 			))}
 		</>
 	)
@@ -36,19 +36,14 @@ export const renderSubscribingComponents = (message: string) => {
 
 	switch (contentType) {
 		case 'git':
-			return (
-				<>
-					<Github content={content} />
-					<TreeCode />
-				</>
-			)
-		case 'notification':
-			return <Telegram content={content} />
+			return <SubcribingGithub content={content} />
 		case 'jenkins':
 			return <Jenkins content={content} />
 		case 'jenkins_log':
 			return <JenkinsLog content={content} />
+		case 'notification':
+			return <Telegram content={content} />
 		case 'text':
-			return <AnyText content={content} />
+			return <SubcribingAnyText content={content} />
 	}
 }

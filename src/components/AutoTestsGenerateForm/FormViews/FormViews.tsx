@@ -3,14 +3,10 @@ import Ui from '../../../views/UiForm'
 import Box from '../../../views/Common/Box/Box'
 import { IAutoFormViewsProps } from './types'
 import { Typography } from 'antd'
-
 import styles from './FormViews.module.scss'
-
-const { Text } = Typography
-
 import Content from '../../../content'
-
 import { icons } from '../../../assets'
+const { Text } = Typography
 
 const renderIcons = (icons: string[]) => {
 	return icons.map(icon => <img width={25} key={icon} src={icon} />)
@@ -73,7 +69,7 @@ const AutoTestsFormViews: React.FC<IAutoFormViewsProps> = ({ control }) => {
 			<Box className={styles.form__wrapper}>
 				<Text className={styles.form__wrapper_text}>VISUALIZATION</Text>
 				<Ui.InputCheckbox
-					name='allure_reports'
+					name='allure_report'
 					control={control}
 					label='Tests results report'
 					content={Content.ResultsReportContent.options}

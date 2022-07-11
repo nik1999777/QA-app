@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout/Layout'
-import HomePage from './pages/HomePage'
+import Kanban from './pages/Kanban'
 import AutoTestsFormPage from './pages/AutoTestsFormPage'
 import PracticeFormPage from './pages/PracticeFormPage'
 
@@ -11,7 +11,7 @@ const App: React.FC = () => {
 	return (
 		<Routes>
 			<Route path='/' element={<Layout />}>
-				<Route path='home' element={<HomePage />} />
+				<Route path='kanban' element={<Kanban />} />
 				<Route index element={<AutoTestsFormPage />} />
 				<Route path='form' element={<PracticeFormPage />} />
 			</Route>
