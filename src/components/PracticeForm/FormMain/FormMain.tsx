@@ -11,17 +11,19 @@ import { IFormMainProps, IFormPracticeInput } from './types'
 const { Title } = Typography
 
 const FormMain: React.FC<IFormMainProps> = ({ setData }) => {
-	const { handleSubmit, control, reset } = useForm<IFormPracticeInput>({
+	const { handleSubmit, control, setValue } = useForm<IFormPracticeInput>({
 		defaultValues,
 	})
 
-	const onSubmit: SubmitHandler<IFormPracticeInput> = data => setData(data)
+	const onSubmit: SubmitHandler<IFormPracticeInput> = data => {
+		setData(data), console.log(data)
+	}
 
 	return (
 		<>
 			<Title>Practice Form</Title>
 			<Form onFinish={handleSubmit(onSubmit)}>
-				<PracticeFormViews control={control} />
+				<PracticeFormViews setValue={setValue} control={control} />
 				<Box className={styles.wrapper}>
 					<Button className={styles.wrapper__button} htmlType='submit'>
 						Generate

@@ -5,7 +5,7 @@ import Box from '../../../views/Common/Box/Box'
 import styles from './FormViews.module.scss'
 import { IFormViewsProps } from './types'
 
-const FormViews: React.FC<IFormViewsProps> = ({ control }) => {
+const FormViews: React.FC<IFormViewsProps> = ({ control, setValue }) => {
 	return (
 		<>
 			<Box className={styles.wrapper}>
@@ -62,6 +62,7 @@ const FormViews: React.FC<IFormViewsProps> = ({ control }) => {
 			/>
 			<Ui.InputSlider name='slider' control={control} label='Slider' />
 			<Ui.InputTextArea name='address' control={control} label='Address' />
+			<Ui.InputFileUploud name='file' control={control} setValue={setValue} />
 		</>
 	)
 }

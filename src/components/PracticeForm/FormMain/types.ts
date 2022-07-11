@@ -12,7 +12,7 @@ export interface IFormPracticeInput {
 	slider: number
 	address: string
 	language: string
-	file: string
+	file: any
 }
 
 export interface IFormMainProps {

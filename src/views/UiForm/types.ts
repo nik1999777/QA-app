@@ -7,10 +7,10 @@ type IFormInput = IFormAutoTestsInput | IFormPracticeInput
 
 export interface IFormInputProps {
 	control: any
-	name: string
+	name: string | any
 	label?: string
 	placeholder?: string
-	setValue?: UseFormSetValue<IFormInput>
+	setValue?: UseFormSetValue<IFormInput> | any
 	content?: any
 	direction?: 'horizontal' | 'vertical'
 }
