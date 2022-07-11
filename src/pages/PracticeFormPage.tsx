@@ -2,7 +2,7 @@ import { useState } from 'react'
 import ContainerLeft from '../components/Containers/ContainerLeft/ContainerLeft'
 import ContainerRight from '../components/Containers/ContainerRight/ConteinerRight'
 import FormResult from '../components/FormResult/FormResult'
-import PracticeForm from '../components/PracticeForm/FormMain/FormMain'
+import FormMain from '../components/PracticeForm/FormMain/FormMain'
 import Box from '../views/Common/Box/Box'
 
 const PracticeFormPage: React.FC = () => {
@@ -11,7 +11,7 @@ const PracticeFormPage: React.FC = () => {
 	return (
 		<>
 			<ContainerLeft>
-				<PracticeForm setData={setData} />
+				<FormMain setData={setData} />
 			</ContainerLeft>
 			<ContainerRight>
 				<Box>{data && <FormResult data={data} />}</Box>
