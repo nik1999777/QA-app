@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { IFormInputProps } from '../types'
 import { Controller } from 'react-hook-form'
 import FormItem from 'antd/lib/form/FormItem'
@@ -10,7 +10,7 @@ const InputFileUploud: React.FC<IFormInputProps> = ({
 	name,
 	setValue,
 }) => {
-	const [fileValue, setFileValue] = React.useState<any>()
+	const [fileValue, setFileValue] = useState()
 
 	useEffect(() => {
 		if (fileValue) setValue(name, fileValue)
