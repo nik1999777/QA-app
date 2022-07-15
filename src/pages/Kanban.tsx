@@ -1,5 +1,5 @@
-import ContainerLeft from '../components/Containers/ContainerLeft/ContainerLeft'
-import ContainerRight from '../components/Containers/ContainerRight/ConteinerRight'
+import ContainerLeft from '../shared/ui/Containers/ContainerLeft/ContainerLeft'
+import ContainerRight from '../shared/ui/Containers/ContainerRight/ConteinerRight'
 
 const Kanban: React.FC = () => {
 	return (
