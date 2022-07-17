@@ -1,82 +1,74 @@
-import { Select } from 'antd'
-import FormItem from 'antd/lib/form/FormItem'
-import React, { useState } from 'react'
-import { Controller } from 'react-hook-form'
-import { IFormInputProps } from '../types'
+import { Cascader } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { IFormInputProps } from '../types';
 
-import styles from './SelectCascader.module.scss'
-
-const { Option } = Select
-const stateData = [
-	'Alabama',
-	'Alaska',
-	'Arizona',
-	'California',
-	'Colorado',
-	'Florida',
-]
-const cityData = {
-	Alabama: ['Jasper', 'Ozark', 'Clanton', 'Florence'],
-	Alaska: ['Kodiak', 'Nome', 'Sitka', 'Ketchikan'],
-	Arizona: ['Mesa', 'Phoenix', 'Kingman', 'Douglas'],
-	California: ['Beverly Hills', 'Los Angeles', 'San Diego', 'San Marino'],
-	Colorado: ['Fort Morgan', 'Montrose', 'Greeley', 'Denver'],
-	Florida: ['Hollywood', 'Miami', 'Orlando', 'Sanford'],
+interface Option {
+	value: string;
+	label: string;
+	children?: Option[];
 }
 
-type CityName = keyof typeof cityData
+const options: Option[] = [
+	{
+		value: 'zhejiang',
+		label: 'Zhejiang',
+		children: [
+			{
+				value: 'hangzhou',
+				label: 'Hangzhou',
+				children: [
+					{
+						value: 'xihu',
+						label: 'West Lake',
+					},
+				],
+			},
+		],
+	},
+	{
+		value: 'jiangsu',
+		label: 'Jiangsu',
+		children: [
+			{
+				value: 'nanjing',
+				label: 'Nanjing',
+				children: [
+					{
+						value: 'zhonghuamen',
+						label: 'Zhong Hua Men',
+					},
+				],
+			},
+		],
+	},
+];
+
 
 const InputSelectCascader: React.FC<IFormInputProps> = ({
 	name,
-	label,
-	control,
-	placeholder,
 	setValue,
 }) => {
-	const [cities, setCities] = useState(cityData[stateData[0] as CityName])
-	const [secondCity, setSecondCity] = useState(
-		cityData[stateData[0] as CityName][0]
-	)
+	const [option, setOption] = useState()
 
-	const handleProvinceChange = (value: CityName) => {
-		setCities(cityData[value])
-		setSecondCity(cityData[value][0])
+	const handleChange = (e: any) => {
+		if (e.option.status === 'done') {
+			setOption(e.option)
+			console.log();
+		}
 	}
 
-	const onSecondCityChange = (value: CityName) => {
-		setSecondCity(value)
-	}
+	useEffect(() => {
+		if (option) setValue(name, option)
+	}, [option])
 
 	return (
-		<FormItem label={label}>
-			<Controller
-				control={control}
-				name={name}
-				render={() => (
-					<div className={styles.box}>
-						<Select
-							style={{ width: '100%' }}
-							onChange={handleProvinceChange}
-							placeholder={placeholder}
-						>
-							{stateData.map(province => (
-								<Option key={province}>{province}</Option>
-							))}
-						</Select>
-						<Select
-							style={{ width: '100%' }}
-							onChange={onSecondCityChange}
-							placeholder={placeholder}
-						>
-							{cities.map((city: any) => (
-								<Option key={city}>{city}</Option>
-							))}
-						</Select>
-					</div>
-				)}
-			/>
-		</FormItem>
-	)
+		<Cascader
+			defaultValue={['zhejiang', 'hangzhou', 'xihu']}
+			options={options}
+			onChange={handleChange}
+		/>
+	);
 }
 
-export default InputSelectCascader
+export default InputSelectCascader;
+
