@@ -1,37 +1,12 @@
 .form {
 	display: grid;
-	grid-gap: 30px;
-
-	&__wrapper {
-		border: 1px solid var(--gx-color-text-black);
-		padding: 0 10px;
-		&_text {
-			font-weight: 600;
-			font-size: 13px;
-			color: var(--gx-color-text-white) !important;
-			background-color: var(--gx-color-text-black);
-			padding: 6px;
-			position: relative;
-			top: -12px;
-		}
-		&_subtitle {
-			position: relative;
-			top: -20px;
-			left: 20px;
-			padding-right: 5px;
-		}
-	}
+	margin-top: 25px;
 }
 
 .border {
-	border: 1px solid var(--gx-color-border-autotest-form);
-	border-radius: 5px;
-	padding: 5px;
-	background-color: var(--gx-color-border-autotest-form);
-}
-
-.wrapp {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 20px;
+	border-bottom: 1px solid rgb(147, 138, 138);
+	&:nth-child(1) {
+		border-top: 1px solid rgb(147, 138, 138);
+	}
+	padding: 15px;
 }

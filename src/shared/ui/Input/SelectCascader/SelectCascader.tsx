@@ -2,7 +2,7 @@ import { Select } from 'antd'
 import FormItem from 'antd/lib/form/FormItem'
 import React, { useState } from 'react'
 import { Controller } from 'react-hook-form'
-import { IFormInputProps } from '../types'
+import { IFormInputProps } from '../Input.types'
 
 import styles from './SelectCascader.module.scss'
 

@@ -1,10 +1,7 @@
 import React from 'react'
 import { Controller } from 'react-hook-form'
-import { IFormInputProps } from '../types'
+import { IFormInputProps } from '../Input.types'
 import { Radio, Space, Typography } from 'antd'
-import FormItem from 'antd/lib/form/FormItem'
-
-const { Text } = Typography
 
 const InputRadio: React.FC<IFormInputProps> = ({
 	control,
@@ -22,8 +19,8 @@ const InputRadio: React.FC<IFormInputProps> = ({
 	}
 
 	return (
-		<FormItem>
-			<Text style={{ display: 'block', marginBottom: '10px' }}>{label}</Text>
+		<div>
+			<Typography>{label}</Typography>
 			<Controller
 				name={name}
 				control={control}
@@ -33,7 +30,7 @@ const InputRadio: React.FC<IFormInputProps> = ({
 					</Radio.Group>
 				)}
 			/>
-		</FormItem>
+		</div>
 	)
 }
 

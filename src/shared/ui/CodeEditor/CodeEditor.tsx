@@ -3,12 +3,12 @@ import { useEffect, useRef } from 'react'
 import { useCodeMirror } from '@uiw/react-codemirror'
 import { java } from '@codemirror/lang-java'
 import { darcula } from '@uiw/codemirror-theme-darcula'
-import { ICodeEditor } from './types'
+import { ICodeEditor } from './CodeEditor.types'
 
 const CodeEditor: React.FC<ICodeEditor> = ({ code }) => {
 	const editor = useRef<any>()
 	const { setContainer } = useCodeMirror({
-		maxHeight: '500px',
+		maxHeight: '312px',
 		container: editor.current,
 		extensions: [java(), darcula],
 		value: code,

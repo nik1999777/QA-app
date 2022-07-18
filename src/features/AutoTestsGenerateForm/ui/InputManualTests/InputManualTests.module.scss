@@ -7,11 +7,12 @@
 		margin-bottom: 4px;
 	}
 	:nth-child(2) {
-		margin-bottom: -5px;
+		margin-bottom: -4px;
 	}
 }
 
 .icon {
+	margin-top: 20px;
 	font-size: 50px;
 	width: 100px;
 	height: 100px;
@@ -20,12 +21,7 @@
 
 .wrapper {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 120px;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
 	align-items: center;
 	grid-gap: 10px;
-}
-
-.wrapp {
-	margin-top: 15px;
-	padding-bottom: 15px;
 }

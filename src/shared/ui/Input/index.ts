@@ -7,7 +7,6 @@ import Date from './Date/Date'
 import SelectMultiple from './SelectMultiple/SelectMultiple'
 import SelectCascader from './SelectCascader/SelectCascader'
 import Slider from './Slider/Slider'
-import ManualTests from './ManualTests/ManualTests'
 import FileUploud from './FileUploud/FileUploud'
 
 export default {
@@ -21,5 +20,4 @@ export default {
 	SelectMultiple,
 	SelectCascader,
 	Slider,
-	ManualTests,
 }

@@ -1,14 +1,11 @@
 import { useForm, SubmitHandler } from 'react-hook-form'
 import React, { useState } from 'react'
-import FormViews from '../../ui/FormViews/FormViews'
 import { defaultValues } from '../../config/defaultValues'
 import { Form, Typography } from 'antd'
 import styles from './FormMain.module.scss'
 import { IFormAutoTestsInput } from './FormMain.types'
 import { SendingMessages } from '../SendingMessages/SendingMessages'
-import FormViews2 from '../../ui/FormViews2/FormViews2'
-
-const { Title } = Typography
+import FormViews from '../../ui/FormViews/FormViews'
 
 const FormMain: React.FC = () => {
 	const { handleSubmit, control } = useForm<IFormAutoTestsInput>({
@@ -23,10 +20,11 @@ const FormMain: React.FC = () => {
 
 	return (
 		<>
-			<Title className={styles.title}>Test automation as a Service</Title>
+			<Typography className={styles.title}>
+				Test automation as a Service
+			</Typography>
 			<Form onFinish={handleSubmit(onSubmit)}>
 				<FormViews control={control} />
-				{/* <FormViews2 control={control} /> */}
 				<div className={styles.wrapper}>
 					<SendingMessages data={data} />
 				</div>

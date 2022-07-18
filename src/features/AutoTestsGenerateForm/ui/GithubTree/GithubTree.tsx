@@ -5,6 +5,9 @@ import ContentTree from '../../config/ContentGithubTree'
 import CodeContent from '../../config/ContentGithubCode'
 import CodeEditor from '../../../../shared/ui/CodeEditor/CodeEditor'
 import FadeIn from 'react-fade-in'
+import styles from './GithubTree.module.scss'
+import { NodeCollapseOutlined, NodeExpandOutlined } from '@ant-design/icons'
+import cn from 'classnames'
 
 const GithubTree: React.FC = () => {
 	const onSelect: DirectoryTreeProps['onSelect'] = (keys, info) => {
@@ -53,16 +56,48 @@ const GithubTree: React.FC = () => {
 		}
 	}
 
+	const [code, setCode] = useState(false)
+	const [tree, setTree] = useState(false)
+
 	return (
 		<>
-			<CodeTree
-				onSelect={onSelect}
-				treeData={ContentTree.TreeDataContent}
-				defaultExpandedKeys={['0-0-0', '0-0-0-3']}
-				defaultSelectedKeys={['0-0-0-3-1']}
-			/>
-
-			{show && <FadeIn>{renderCodeComponents()}</FadeIn>}
+			<div className={styles.wrapper}>
+				<div
+					className={cn(
+						styles.tree,
+						{ [styles.tree_active]: code },
+						{ [styles.tree_active2]: tree }
+					)}
+				>
+					<div className={styles.wrapp}>
+						<CodeTree
+							onSelect={onSelect}
+							treeData={ContentTree.TreeDataContent}
+							defaultExpandedKeys={['0-0-0', '0-0-0-3']}
+							defaultSelectedKeys={['0-0-0-3-1']}
+						/>
+						<NodeExpandOutlined
+							className={styles.icon}
+							onClick={() => setTree(!tree)}
+						/>
+					</div>
+				</div>
+				<div
+					className={cn(
+						styles.code,
+						{ [styles.code_active]: code },
+						{ [styles.code_active2]: tree }
+					)}
+				>
+					<div className={styles.wrapp}>
+						{show && <FadeIn>{renderCodeComponents()}</FadeIn>}
+						<NodeCollapseOutlined
+							className={styles.icon2}
+							onClick={() => setCode(!code)}
+						/>
+					</div>
+				</div>
+			</div>
 		</>
 	)
 }

@@ -25,40 +25,20 @@ const Navbar = () => {
 
 	return (
 		<nav className={styles.navbar}>
-			<Layout>
-				<Layout.Header className={styles.nav_header}>
-					<div className={styles.logo}>
-						<img src={logo} className={styles.logo_img} />
-					</div>
-					<div className={styles.navbar_menu}>
-						<div className={styles.leftMenu}>
-							<LeftMenu mode={'horizontal'} />
-						</div>
-						<Button
-							className={styles.menuButton}
-							type='text'
-							onClick={showDrawer}
-						>
-							<MenuOutlined />
-						</Button>
-						<div className={styles.rightMenu}>
-							<RightMenu mode={'horizontal'} />
-						</div>
-
-						<Drawer
-							title={'Brand Here'}
-							placement='right'
-							closable={true}
-							onClose={showDrawer}
-							visible={visible}
-							style={{ zIndex: 99999 }}
-						>
-							<LeftMenu mode={'inline'} />
-							<RightMenu mode={'inline'} />
-						</Drawer>
-					</div>
-				</Layout.Header>
-			</Layout>
+			<Button className={styles.menuButton} type='text' onClick={showDrawer}>
+				<MenuOutlined />
+			</Button>
+			<Drawer
+				title={'Brand Here'}
+				placement='right'
+				closable={true}
+				onClose={showDrawer}
+				visible={visible}
+				style={{ zIndex: 99999 }}
+			>
+				<LeftMenu mode={'inline'} />
+				<RightMenu mode={'inline'} />
+			</Drawer>
 		</nav>
 	)
 }

@@ -1,7 +1,7 @@
 import { Tree } from 'antd'
 import React from 'react'
 import styles from './CodeTree.module.scss'
-import { ICodeTree } from './types'
+import { ICodeTree } from './CodeTree.types'
 const { DirectoryTree } = Tree
 
 const CodeTree: React.FC<ICodeTree> = ({

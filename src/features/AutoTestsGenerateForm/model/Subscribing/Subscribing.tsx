@@ -14,8 +14,6 @@ export const Subscribing: React.FC = () => {
 	const [messages, setMessages] = useState<string[]>([])
 
 	useSubscription(`/topic/${uuid}`, (messages: IMessage) => {
-		// console.log(messages)
-		// console.log(messages.body)
 		setMessages((prevMessages: any[]) => [
 			...prevMessages,
 			renderSubscribingComponents(messages.body),

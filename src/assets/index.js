@@ -1,6 +1,5 @@
 import logo from './icons/logo.svg'
 import AllureTestOps from './icons/Allure_TestOps.svg'
-import Allure from './icons/Allure.png'
 import Appium from './icons/Appium.svg'
 import Browserstack from './icons/Browserstack.svg'
 import Docker from './icons/Docker.svg'
@@ -19,7 +18,6 @@ import Telegram from './icons/Telegram.svg'
 
 export const icons = {
 	AllureTestOps,
-	Allure,
 	Appium,
 	Browserstack,
 	Docker,

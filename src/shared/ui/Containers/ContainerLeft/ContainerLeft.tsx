@@ -1,6 +1,6 @@
 import { Content } from 'antd/lib/layout/layout'
 import { FC } from 'react'
-import { ContainerProps } from '../types'
+import { ContainerProps } from '../Container.types'
 import styles from './ContainerLeft.module.scss'
 
 const ContainerLeft: FC<ContainerProps> = ({ children }) => {

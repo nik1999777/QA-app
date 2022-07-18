@@ -1,10 +1,8 @@
 import { Input, Typography } from 'antd'
 import FormItem from 'antd/lib/form/FormItem'
 import { Controller } from 'react-hook-form'
-import { IFormInputProps } from '../types'
-
+import { IFormInputProps } from '../Input.types'
 const { TextArea } = Input
-const { Text } = Typography
 
 const InputTextArea: React.FC<IFormInputProps> = ({
 	name,
@@ -14,7 +12,7 @@ const InputTextArea: React.FC<IFormInputProps> = ({
 }) => {
 	return (
 		<FormItem>
-			<Text>{label}</Text>
+			<Typography>{label}</Typography>
 			<Controller
 				name={name}
 				control={control}

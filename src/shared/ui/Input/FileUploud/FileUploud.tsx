@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { IFormInputProps } from '../types'
+import { IFormInputProps } from '../Input.types'
 import { Controller } from 'react-hook-form'
 import FormItem from 'antd/lib/form/FormItem'
 import { Button, Upload } from 'antd'
