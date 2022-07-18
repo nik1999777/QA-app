@@ -13,6 +13,7 @@ export interface IFormPracticeInput {
 	address: string
 	language: string
 	file: any
+	select: string,
 }
 
 export interface IFormMainProps {

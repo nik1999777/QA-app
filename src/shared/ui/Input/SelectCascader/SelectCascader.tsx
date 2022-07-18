@@ -1,5 +1,6 @@
 import { Cascader } from 'antd';
 import React, { useEffect, useState } from 'react';
+import { Controller } from 'react-hook-form';
 import { IFormInputProps } from '../types';
 
 interface Option {
@@ -47,25 +48,28 @@ const options: Option[] = [
 const InputSelectCascader: React.FC<IFormInputProps> = ({
 	name,
 	setValue,
+	control
 }) => {
 	const [option, setOption] = useState()
 
-	const handleChange = (e: any) => {
-		if (e.option.status === 'done') {
-			setOption(e.option)
-			console.log();
-		}
-	}
+
+
+	const onChange = (value: any) => {
+		setOption(value);
+	};
+	if (option) { console.log(option[0]) }
+
 
 	useEffect(() => {
 		if (option) setValue(name, option)
 	}, [option])
 
+
 	return (
-		<Cascader
-			defaultValue={['zhejiang', 'hangzhou', 'xihu']}
-			options={options}
-			onChange={handleChange}
+		<Controller
+			control={control}
+			name={name}
+			render={() => (< Cascader defaultValue={['zhejiang', 'hangzhou', 'xihu']} options={options} onChange={onChange} />)}
 		/>
 	);
 }

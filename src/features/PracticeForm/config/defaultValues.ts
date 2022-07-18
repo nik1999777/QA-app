@@ -7,9 +7,9 @@ export const defaultValues = {
 	birthDate: '',
 	subjects: [],
 	hobbies: [],
-	stateCity: [],
 	slider: 0,
 	language: '',
 	address: '',
 	file: '',
+	select: '',
 }

@@ -54,7 +54,7 @@ const FormViews: React.FC<IFormViewsProps> = ({ control, setValue }) => {
 				content={Content.SubjectsContent.subjects}
 			/>
 			<Ui.SelectCascader
-				name='stateCity'
+				name='select'
 				control={control}
 				placeholder='Select'
 				label='Select State and City'
