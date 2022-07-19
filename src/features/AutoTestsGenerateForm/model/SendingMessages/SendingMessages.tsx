@@ -14,6 +14,8 @@ export const SendingMessages: React.FC<ISendingMessages> = ({ data }) => {
 		setVisible(!visible)
 
 		if (stompClient && data) {
+			console.log(dataSerialize(data))
+
 			stompClient.publish({
 				destination: `/app/generate/${uuid}`,
 				body: dataSerialize(data),

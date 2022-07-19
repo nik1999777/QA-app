@@ -12,16 +12,18 @@
 }
 
 .icon {
-	margin-top: 20px;
-	font-size: 50px;
-	width: 100px;
-	height: 100px;
+	font-size: 35px;
+	width: min-content;
 	color: var(--gx-color-border-autotest-plus) !important;
+	position: absolute;
+	right: -45px;
+	top: 50px;
 }
 
 .wrapper {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	align-items: center;
+	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 10px;
+	margin-right: 40px;
+	position: relative;
 }

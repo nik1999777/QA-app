@@ -6,6 +6,10 @@ body {
 	font-weight: normal;
 }
 
+::-webkit-scrollbar {
+	width: 0;
+}
+
 :root {
 	--gx-color-header: #f9f9f9;
 	--gx-color-content-left: #ffffff;
@@ -62,6 +66,15 @@ body {
 }
 .ant-tree {
 	font-size: 13px;
+}
+.ant-tree-indent {
+	:nth-child(1n) {
+		width: 4px;
+	}
+}
+.ant-tree-switcher {
+	width: 5px;
+	// display: none;
 }
 
 //ant-design navbar

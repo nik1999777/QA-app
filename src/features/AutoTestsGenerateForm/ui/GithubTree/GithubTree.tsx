@@ -6,8 +6,8 @@ import CodeContent from '../../config/ContentGithubCode'
 import CodeEditor from '../../../../shared/ui/CodeEditor/CodeEditor'
 import FadeIn from 'react-fade-in'
 import styles from './GithubTree.module.scss'
-import { NodeCollapseOutlined, NodeExpandOutlined } from '@ant-design/icons'
-import cn from 'classnames'
+import { FullscreenExitOutlined } from '@ant-design/icons'
+import { Modal } from 'antd'
 
 const GithubTree: React.FC = () => {
 	const onSelect: DirectoryTreeProps['onSelect'] = (keys, info) => {
@@ -17,85 +17,141 @@ const GithubTree: React.FC = () => {
 	}
 
 	const [title, setTitle] = useState<unknown>()
-	const [show, setShow] = useState(false)
 
-	useEffect(() => {
-		setTimeout(() => setShow(true), 2500)
-	}, [title])
-
-	const renderCodeComponents = () => {
+	const renderCodeComponents = (maxHeight: string) => {
 		switch (title) {
 			case 'App.java':
-				return <CodeEditor code={CodeContent.AppContent} />
+				return (
+					<CodeEditor maxHeight={maxHeight} code={CodeContent.AppContent} />
+				)
 			case 'AppConfig.java':
-				return <CodeEditor code={CodeContent.AppConfigContent} />
+				return (
+					<CodeEditor
+						maxHeight={maxHeight}
+						code={CodeContent.AppConfigContent}
+					/>
+				)
 			case 'Project.java':
-				return <CodeEditor code={CodeContent.ProjectContent} />
+				return (
+					<CodeEditor maxHeight={maxHeight} code={CodeContent.ProjectContent} />
+				)
 			case 'ProjectConfig.java':
-				return <CodeEditor code={CodeContent.ProjectConfigContent} />
+				return (
+					<CodeEditor
+						maxHeight={maxHeight}
+						code={CodeContent.ProjectConfigContent}
+					/>
+				)
 			case 'CssXpathExamples.java':
-				return <CodeEditor code={CodeContent.CssXpathExamplesContent} />
+				return (
+					<CodeEditor
+						maxHeight={maxHeight}
+						code={CodeContent.CssXpathExamplesContent}
+					/>
+				)
 			case 'SelenideSnippets.java':
-				return <CodeEditor code={CodeContent.SelenideSnippetsContent} />
+				return (
+					<CodeEditor
+						maxHeight={maxHeight}
+						code={CodeContent.SelenideSnippetsContent}
+					/>
+				)
 			case 'AllureAttachments.java':
-				return <CodeEditor code={CodeContent.AllureAttachmentsContent} />
+				return (
+					<CodeEditor
+						maxHeight={maxHeight}
+						code={CodeContent.AllureAttachmentsContent}
+					/>
+				)
 			case 'AllureRestAssuredFilter.java':
-				return <CodeEditor code={CodeContent.AllureRestAssuredFilterContent} />
+				return (
+					<CodeEditor
+						maxHeight={maxHeight}
+						code={CodeContent.AllureRestAssuredFilterContent}
+					/>
+				)
 			case 'DriverSettings.java':
-				return <CodeEditor code={CodeContent.DriverSettingsContent} />
+				return (
+					<CodeEditor
+						maxHeight={maxHeight}
+						code={CodeContent.DriverSettingsContent}
+					/>
+				)
 			case 'DriverUtils.java':
-				return <CodeEditor code={CodeContent.DriverUtilsContent} />
+				return (
+					<CodeEditor
+						maxHeight={maxHeight}
+						code={CodeContent.DriverUtilsContent}
+					/>
+				)
 			case 'LoginTests.java':
-				return <CodeEditor code={CodeContent.LoginTestsContent} />
+				return (
+					<CodeEditor
+						maxHeight={maxHeight}
+						code={CodeContent.LoginTestsContent}
+					/>
+				)
 			case 'GeneratedTests.java':
-				return <CodeEditor code={CodeContent.GeneratedTestsContent} />
+				return (
+					<CodeEditor
+						maxHeight={maxHeight}
+						code={CodeContent.GeneratedTestsContent}
+					/>
+				)
 			case 'TestBase.java':
-				return <CodeEditor code={CodeContent.TestBaseContent} />
+				return (
+					<CodeEditor
+						maxHeight={maxHeight}
+						code={CodeContent.TestBaseContent}
+					/>
+				)
 			default:
-				return <CodeEditor code={CodeContent.GeneratedTestsContent} />
+				return (
+					<CodeEditor
+						maxHeight={maxHeight}
+						code={CodeContent.GeneratedTestsContent}
+					/>
+				)
 		}
 	}
 
-	const [code, setCode] = useState(false)
-	const [tree, setTree] = useState(false)
+	const [isModalVisible, setIsModalVisible] = useState(false)
+
+	const showModal = () => {
+		setIsModalVisible(true)
+	}
+
+	const handleOk = () => {
+		setIsModalVisible(false)
+	}
+
+	const handleCancel = () => {
+		setIsModalVisible(false)
+	}
 
 	return (
 		<>
 			<div className={styles.wrapper}>
-				<div
-					className={cn(
-						styles.tree,
-						{ [styles.tree_active]: code },
-						{ [styles.tree_active2]: tree }
-					)}
-				>
-					<div className={styles.wrapp}>
-						<CodeTree
-							onSelect={onSelect}
-							treeData={ContentTree.TreeDataContent}
-							defaultExpandedKeys={['0-0-0', '0-0-0-3']}
-							defaultSelectedKeys={['0-0-0-3-1']}
-						/>
-						<NodeExpandOutlined
-							className={styles.icon}
-							onClick={() => setTree(!tree)}
-						/>
-					</div>
+				<div className={styles.tree}>
+					<CodeTree
+						onSelect={onSelect}
+						treeData={ContentTree.TreeDataContent}
+						defaultExpandedKeys={['0-0-0', '0-0-0-3']}
+						defaultSelectedKeys={['0-0-0-3-1']}
+					/>
 				</div>
-				<div
-					className={cn(
-						styles.code,
-						{ [styles.code_active]: code },
-						{ [styles.code_active2]: tree }
-					)}
-				>
-					<div className={styles.wrapp}>
-						{show && <FadeIn>{renderCodeComponents()}</FadeIn>}
-						<NodeCollapseOutlined
-							className={styles.icon2}
-							onClick={() => setCode(!code)}
-						/>
-					</div>
+				<div className={styles.code}>
+					<FadeIn>{renderCodeComponents('325px')}</FadeIn>
+					<Modal
+						width={1100}
+						title='Code'
+						visible={isModalVisible}
+						onOk={handleOk}
+						onCancel={handleCancel}
+					>
+						<FadeIn>{renderCodeComponents('100%')}</FadeIn>
+					</Modal>
+					<FullscreenExitOutlined className={styles.icon} onClick={showModal} />
 				</div>
 			</div>
 		</>

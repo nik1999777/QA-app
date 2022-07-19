@@ -4,36 +4,31 @@ import styles from './InputManualTests.module.scss'
 import { Typography } from 'antd'
 import { useState } from 'react'
 import InputSingleManualTest from './InputSingleManualTest'
-
 const { Text } = Typography
 
-const InputManualTests: React.FC<IFormInputProps> = ({
-	control,
-	label,
-	name,
-}) => {
+const InputManualTests: React.FC<IFormInputProps> = ({ control, label }) => {
 	const [array, setArray] = useState<any>([])
 
-	const handleCreateArticle = () => {
+	const handleCreateManualTest = () => {
 		setArray([...array, { ...array, id: Math.random() }])
 	}
 
 	return (
-		<div>
+		<>
 			<Text>{label}</Text>
 			<div className={styles.wrapper}>
 				<InputSingleManualTest control={control} name='1' />
 				<InputSingleManualTest control={control} name='2' />
 				<InputSingleManualTest control={control} name='3' />
 				{array.map((arr: any) => (
-					<InputSingleManualTest key={arr.id} control={control} name={name} />
+					<InputSingleManualTest key={arr.id} control={control} name={''} />
 				))}
 				<PlusCircleOutlined
-					onClick={handleCreateArticle}
+					onClick={handleCreateManualTest}
 					className={styles.icon}
 				/>
 			</div>
-		</div>
+		</>
 	)
 }
 

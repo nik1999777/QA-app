@@ -5,10 +5,10 @@ import { java } from '@codemirror/lang-java'
 import { darcula } from '@uiw/codemirror-theme-darcula'
 import { ICodeEditor } from './CodeEditor.types'
 
-const CodeEditor: React.FC<ICodeEditor> = ({ code }) => {
+const CodeEditor: React.FC<ICodeEditor> = ({ code, maxHeight }) => {
 	const editor = useRef<any>()
 	const { setContainer } = useCodeMirror({
-		maxHeight: '312px',
+		maxHeight: maxHeight,
 		container: editor.current,
 		extensions: [java(), darcula],
 		value: code,
